@@ -22,7 +22,7 @@ namespace WebBanSach.Controllers
         public async Task<ViewResult> AddNewBook(bool isSuccess = false, int bookId = 0)
         {
             var model = new BookModel();
-
+            /*asdsdasdas*/
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
             return View(model);
