@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/7ILVB1S87EtWq9d9t6ophkz+apzzhFXQmUopc6ZzQk=",
+  "Hash": "Bj/rW9rV+0tbuwlCj6Tha7IVN7F0ZGjujLYCT7rgQOo=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebBanSach.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\user_case.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "books/cover/user_case.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\books\\cover\\user_case.jpg"
     },
     {
       "Identity": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\css\\site.css",
