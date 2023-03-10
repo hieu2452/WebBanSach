@@ -1,0 +1,73 @@
+﻿
+@inject WebBanSach.Repository.ILanguageRepository _languageRepo
+@*@inject WebBanSach.Repository.ICategoryRepository _categoryRepo*@
+@model BookModel
+@{
+    ViewData["Title"] = "Add new book";
+}
+<div class="container">
+    <h3 class="display-4">Add new book</h3>
+    <hr />
+    @if (ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulations</strong> You have added new book successfully. <br />
+            Click <a asp-controller="Book" asp-action="GetBook" asp-route-id="@ViewBag.BookId">here</a> to view the details
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    <form method="post" enctype="multipart/form-data" asp-action="AddNewBook" asp-controller="Book">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="MaNg" class="control-label"></label>
+            <select asp-for="MaNg" class="form-control" asp-items="(await _languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})">
+                <option value="">Please choose your language</option>
+            </select>
+            <span asp-validation-for="MaNg" class="text-danger"></span>
+        </div>
+
+
+@*        <div class="form-group">
+            <label asp-for="TheLoai" class="control-label"></label>
+            <select asp-for="TheLoai" class="form-control" asp-items="(await _categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})">
+                <option value="">Please choose your category</option>
+            </select>
+            <span asp-validation-for="TheLoai" class="text-danger"></span>
+        </div>
+*@
+        <div class="form-group">
+            <label asp-for="TenSach" class="control-label"></label>
+            <input asp-for="TenSach" class="form-control" />
+            <span asp-validation-for="TenSach" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TacGia" class="control-label"></label>
+            <input asp-for="TacGia" class="form-control" />
+            <span asp-validation-for="TacGia" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MoTa" class="control-label"></label>
+            <textarea asp-for="MoTa" class="form-control"></textarea>
+            <span asp-validation-for="MoTa" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AnhDaiDien" class="control-label"></label>
+            <div class="custom-file">
+                <input asp-for="AnhDaiDien" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Add book" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
