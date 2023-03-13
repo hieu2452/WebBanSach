@@ -14,6 +14,7 @@ namespace WebBanSach.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();
@@ -30,7 +31,7 @@ namespace WebBanSach.Controllers
         {
             return View();
         }
-
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();

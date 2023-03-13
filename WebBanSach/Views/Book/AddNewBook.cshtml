@@ -1,6 +1,6 @@
 ﻿
 @inject WebBanSach.Repository.ILanguageRepository _languageRepo
-@*@inject WebBanSach.Repository.ICategoryRepository _categoryRepo*@
+@inject WebBanSach.Repository.ICategoryRepository _categoryRepo
 @model BookModel
 @{
     ViewData["Title"] = "Add new book";
@@ -23,7 +23,7 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
         <div class="form-group">
-            <label asp-for="MaNg" class="control-label"></label>
+            <label asp-for="MaNg" class="control-label">Chon ngon ngu</label>
             <select asp-for="MaNg" class="form-control" asp-items="(await _languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})">
                 <option value="">Please choose your language</option>
             </select>
@@ -49,6 +49,14 @@
             <label asp-for="TacGia" class="control-label"></label>
             <input asp-for="TacGia" class="form-control" />
             <span asp-validation-for="TacGia" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="MaTl" class="control-label">Chon the loai</label>
+            <select asp-for="MaTl" class="form-control" asp-items="(await _categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})">
+                <option value="">Please choose your language</option>
+            </select>
+            <span asp-validation-for="MaTl" class="text-danger"></span>
         </div>
 
         <div class="form-group">
