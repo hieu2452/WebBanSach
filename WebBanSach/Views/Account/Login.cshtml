@@ -4,9 +4,11 @@
 
 @if (ViewData["ErrorMessage"] != null)
 {
+
     <div class="alert alert-danger" role="alert">
         @ViewData["ErrorMessage"]
     </div>
+
 }
 
 <form method="post">
@@ -19,4 +21,6 @@
         <input type="password" class="form-control" name="Password" required />
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
+    @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary" })
+
 </form>

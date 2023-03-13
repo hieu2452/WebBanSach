@@ -14,7 +14,7 @@ namespace WebBanSach.Controllers
             _logger = logger;
         }
 
-        [Authorize]
+        [Authorize(Policy = "AdminPolicy")]
         public IActionResult Index()
         {
             return View();
