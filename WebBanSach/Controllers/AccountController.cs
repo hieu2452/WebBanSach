@@ -28,8 +28,9 @@ namespace WebBanSach.Controllers
             return View();  
         }
 
+        
         [HttpPost]
-        /*public async Task<IActionResult> Login(LoginModel model)
+         public async Task<IActionResult> Login(LoginModel model)
         {
             var user = await _context.TUsers.FirstOrDefaultAsync(u => u.Email == model.Email && u.PassW == model.Password);
 
@@ -52,7 +53,7 @@ namespace WebBanSach.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
             return RedirectToAction(user.RoleId, "Home");
-        }*/
+        }
 
         public async Task<IActionResult> Logout()
         {
