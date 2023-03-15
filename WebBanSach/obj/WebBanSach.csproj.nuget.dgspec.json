@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
+    "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
   },
   "projects": {
-    "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
+    "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "projectUniqueName": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
         "projectName": "WebBanSach",
-        "projectPath": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
-        "packagesPath": "C:\\Users\\soica\\.nuget\\packages\\",
-        "outputPath": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\obj\\",
+        "projectPath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\soica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,17 +46,21 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.12, )"
             }
           },
           "imports": [
@@ -78,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

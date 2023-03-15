@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Đăng kí";
+}
+
+<div class="container">
+    <div class="content">
+        <h1 class="title">Đăng kí tài khoản Book</h1>
+        <form method="post" class="form">
+            <div class="label">Tên của bạn?</div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="Name" required placeholder="Họ và tên của bạn"/>
+            </div>
+            <div class="label">Số điện thoại</div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="numberPhone" required placeholder="Số điện thoại"/>
+            </div>
+            <button type="submit" class="btn btn-login">Đăng kí</button>
+            <p>Bạn đã có tài khoản? <a asp-controller="Account" asp-action="Login">Đăng nhập</a> </p>
+        </form>
+    </div>
+</div>
+
