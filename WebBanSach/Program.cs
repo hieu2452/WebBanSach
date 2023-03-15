@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebBanSach.Repository;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("UserPolicy", policy => policy.RequireRole("User"));
 });
 
+
+
+
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
@@ -34,6 +38,12 @@ builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+app.MapControllerRoute(
+    name: "register",
+    pattern: "Account/Register",
+    defaults: new { controller = "Account", action = "Register" });
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

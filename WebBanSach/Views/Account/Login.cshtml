@@ -1,7 +1,20 @@
 ﻿@model LoginModel
 
+<<<<<<< HEAD
 @{
     ViewData["Title"] = "Đăng nhập";
+}
+=======
+<h2>Login</h2>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+
+    <div class="alert alert-danger" role="alert">
+        @ViewData["ErrorMessage"]
+    </div>
+
+>>>>>>> eb1e69712e2421d5905647de06ce3079434772b9
 }
 
 <div class="container">
@@ -18,5 +31,16 @@
             <p>Bạn chưa có tài khoản? <a asp-controller="Account" asp-action="Register">Đăng kí</a> </p>
         </form>
     </div>
+<<<<<<< HEAD
 </div>
 
+=======
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" name="Password" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    @Html.ActionLink("Register", "Register", "Account", null, new { @class = "btn btn-primary" })
+
+</form>
+>>>>>>> eb1e69712e2421d5905647de06ce3079434772b9

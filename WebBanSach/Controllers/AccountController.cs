@@ -6,6 +6,8 @@ using System.Security.Claims;
 using WebBanSach.Models;
 using Microsoft.AspNetCore.Identity;
 
+
+
 namespace WebBanSach.Controllers
 {
     public class AccountController : Controller
@@ -17,6 +19,39 @@ namespace WebBanSach.Controllers
         {
             _context = context;
         }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new TUser { UserN = model.Name, Email = model.Email, RoleId="User" };
+                List<TUser> users = _context.TUsers.Where(x => x.Email == user.Email).ToList();
+
+                if (users == null)
+                {
+                    _context.TUsers.AddAsync(user);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("Login", "Account");
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "Email exists";
+                }
+            }
+
+            return View(model);
+        }
+
+
+
 
         public IActionResult Login()
         {

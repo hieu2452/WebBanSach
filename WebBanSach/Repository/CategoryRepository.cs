@@ -20,9 +20,6 @@ namespace WebBanSach.Repository
             }).ToListAsync();
         }
 
-        Task<List<CategoryModel>> ICategoryRepository.GetCategorys()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

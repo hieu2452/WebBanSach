@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿@{
     ViewData["Title"] = "Đăng kí";
 }
@@ -9,7 +10,7 @@
             <div class="label">Tên của bạn?</div>
             <div class="form-group">
                 <input type="text" class="form-control" name="Name" required placeholder="Họ và tên của bạn"/>
-            </div>
+            </div><a href="d:\nam3\ky_ii\laptrinhweb\webbansach\webbansach\views\account\register.cshtml">d:\nam3\ky_ii\laptrinhweb\webbansach\webbansach\views\account\register.cshtml</a>
             <div class="label">Số điện thoại</div>
             <div class="form-group">
                 <input type="text" class="form-control" name="numberPhone" required placeholder="Số điện thoại"/>
@@ -20,3 +21,46 @@
     </div>
 </div>
 
+=======
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model RegisterModel
+
+<form method="post">
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+
+        <div class="alert alert-danger" role="alert">
+            @ViewData["ErrorMessage"]
+        </div>
+
+    }
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+>>>>>>> eb1e69712e2421d5905647de06ce3079434772b9
