@@ -173,8 +173,8 @@ REFERENCES [dbo].[tSach] ([MaSach])
 insert into tUserRole(roleID,MoTa) values ('Admin','Quan ly')
 insert into tUserRole(roleID,MoTa) values ('User','Nguoi dung')
 
-insert into tUser(ID,UserN,DiaChi,SDT,Email,passW,roleID) values ('admin','Ha Noi','0932323','admin@gmail.com','123','Admin')
-insert into tUser(ID,UserN,DiaChi,SDT,Email,passW,roleID) values ('user','Ha Noi','093232333','user@gmail.com','123','User')
+insert into tUser(UserN,DiaChi,SDT,Email,passW,roleID) values ('admin','Ha Noi','0932323','admin@gmail.com','123','Admin')
+insert into tUser(UserN,DiaChi,SDT,Email,passW,roleID) values ('user','Ha Noi','093232333','user@gmail.com','123','User')
 insert into tUser(UserN,DiaChi,SDT,Email,passW,roleID) values ('user','Ha Noi','093232333','user1@gmail.com','123','User')
 
 insert into tTheLoai(TenTL) values ('Hai Huoc')
