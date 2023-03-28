@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "BookDetails";
+    Layout = "~/Views/Shared/_BookStore.cshtml";
+}
+
+@model TSach
+
+<div id="content-product-details">
+    <div class="header-content">
+        <a href="./index.html">@*Trang chủ -</a> <a href="">Sách trinh thám*@ @*@Model.ttheloai.TenTl*@ </a>
+    </div>
+
+    <div class="info-product row">
+        <!-- Images -->
+        <div class="images-product col-sm-6">
+            <div class="img-main col-sm-10">
+                <i class='bx bx-chevron-left'></i>
+                <img src="./assets/images/item1.jpg" alt="Ảnh">
+                <i class='bx bx-chevron-right'></i>
+            </div>
+
+        </div>
+
+        <!-- info -->
+        <div class="col-sm-6">
+            <div class="description-product">
+                <h1>@Model.TenSach</h1>
+                <div class="product-detail">
+                    <p>@Model.MaSach</p>
+                    <div class="rating-bar">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <span>(0 đánh giá)</span>
+                </div>
+                <div class="product-price">
+                    <span class="sale-price">@Model.DonGia</span>
+                </div>
+                <div class="quantity">
+                    <input type="number" placeholder="Số lượng" value="0" min="0">
+                </div>
+
+                <div class="add-cart">
+                    <div class="button">
+                        <button>Thêm vào giỏ</button>
+                    </div>
+                    <div class="button">
+                        <button>Mua hàng</button>
+                    </div>
+                    <div class="button">
+                        <button><i class='bx bx-heart'></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feed-back">
+        <h1>KHÁCH HÀNG ĐÁNH GIÁ</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="feedback-star">
+                    <div class="parameter">
+                        <h1>5</h1>
+                        <div class="rating-bar">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            (0 đánh giá)
+                        </div>
+                    </div>
+
+                    <div class="rating-bar">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+
+                    <div class="rating-bar">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+
+                    <div class="rating-bar">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+
+                    <div class="rating-bar">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+
+                    <div class="rating-bar">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+                <div class="star-smile">
+                    <i class='bx bxs-wink-smile'></i>
+                    <p>Sản phẩm chưa có đánh giá. Hãy là người đầu tiên đánh giá sản phẩm này !</p>
+                    <div class="button">
+                        <button>Đánh giá sản phẩm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h1>BookDetails</h1>
+

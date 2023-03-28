@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebBanSach.Repository;
 using Microsoft.AspNetCore.Identity;
+using WebBanSach.Repository.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 

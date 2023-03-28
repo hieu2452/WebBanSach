@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace WebBanSach.Models
+namespace WebBanSach.Models.Datas
 {
     public class BookModel
     {
@@ -31,23 +31,23 @@ namespace WebBanSach.Models
 
         [Required(ErrorMessage = "Please enter the total pages")]
         [Display(Name = "Total pages of book")]
-      /*  public int? TotalPages { get; set; }
+        /*  public int? TotalPages { get; set; }
 
-        [Display(Name = "Choose the cover photo of your book")]*//*
-        [Required]*/
+          [Display(Name = "Choose the cover photo of your book")]*//*
+          [Required]*/
         public IFormFile? AnhDaiDien { get; set; }
         public string? Anh { get; set; }
-/*
-        [Display(Name = "Choose the gallery images of your book")]
-        [Required]*/
-/*        public IFormFileCollection? GalleryFiles { get; set; }
+        /*
+                [Display(Name = "Choose the gallery images of your book")]
+                [Required]*/
+        /*        public IFormFileCollection? GalleryFiles { get; set; }
 
-        public List<GalleryModel>? Gallery { get; set; }
+                public List<GalleryModel>? Gallery { get; set; }
 
-        [Display(Name = "Upload your book in pdf format")]
-        [Required]
-        public IFormFile? BookPdf { get; set; }
-        [AllowNull]
-        public string? BookPdfUrl { get; set; }*/
+                [Display(Name = "Upload your book in pdf format")]
+                [Required]
+                public IFormFile? BookPdf { get; set; }
+                [AllowNull]
+                public string? BookPdfUrl { get; set; }*/
     }
 }

@@ -19,6 +19,8 @@ public partial class TUser
 
     public string? RoleId { get; set; }
 
+    public string? AnhDaiDien { get; set; }
+
     public virtual TUserRole? Role { get; set; }
 
     public virtual ICollection<THoaDon> THoaDons { get; } = new List<THoaDon>();

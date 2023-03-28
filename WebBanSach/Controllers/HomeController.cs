@@ -2,22 +2,20 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebBanSach.Models;
+using WebBanSach.Repository.Interface;
 
 namespace WebBanSach.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly DbBookStoreContext _context;
+        private readonly IBookRepository _bookRepository;
+        public HomeController(ILogger<HomeController> logger, DbBookStoreContext context, IBookRepository bookRepository)
         {
+            _context = context;
             _logger = logger;
-        }
-
-        [Authorize(Policy = "AdminPolicy")]
-        public IActionResult Index()
-        {
-            return View();
+            _bookRepository = bookRepository;
         }
 
         [Authorize(Policy = "AdminPolicy")]
@@ -27,10 +25,30 @@ namespace WebBanSach.Controllers
         }
 
         [Authorize(Policy = "UserPolicy")]
-        public IActionResult User()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var lst = await _bookRepository.GetAllBooks();
+
+            return View(lst);
         }
+
+
+        [HttpGet]
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> LoadBook()
+        {
+            var lst = await _bookRepository.GetAllBooks();
+            return View(lst);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> BookDetails(int masach)
+        {
+            var lst = await _bookRepository.GetById(masach);
+            return View(lst);
+        }
+
+
         [Authorize]
         public IActionResult Privacy()
         {

@@ -1,0 +1,123 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<TSach>
+@Html.ActionLink("Create New Book", "AddNewBook", "Book", null, new { @class = "btn btn-primary" })
+
+<h1>DanhMucSanPham</h1>
+
+
+@TempData["message"]
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ma San Pham
+            </th>
+
+            <th>
+                Ten San Pham
+            </th>
+
+            <th>
+                Tac gia
+            </th>
+
+            <th>
+                Don gia
+            </th>
+
+            <th>
+                Mo ta
+            </th>
+            <th>
+                Ma the loai
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaSach)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSach)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TacGia)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonGia)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaTl)
+                </td>
+
+                <td>
+                    @*<a asp-controller="Book" asp-action="Edit"
+                asp-route-masach="@item.MaSach">Edit</a>|
+                <a asp-action="Details" asp-route-id="@item.MaSach">Details</a> |*@
+                    @*<a asp-controller="Book" asp-action="Delete"
+                asp-route-masach="@item.MaSach" class="delete" data-url="@Url.Action("Delete", new { id = item.MaSach })" data-booktitle="@item.TenSach">Delete </a>*@
+
+                    <a type="button" class="btn btn-danger edit-book" asp-controller="Book" asp-action="Edit"
+                   asp-route-masach="@item.MaSach"
+                   data-url="@Url.Action("Edit", "Book", new { masach = item.MaSach })"
+                   data-booktitle="@item.TenSach">
+                        Edit
+                    </a>
+
+                    <button type="button" class="btn btn-danger details-book"
+                        data-url="@Url.Action("Details", "Book", new { masach = item.MaSach })"
+                        data-booktitle="@item.TenSach">
+                        Details
+                    </button>
+
+                    <a type="button" class="btn btn-danger delete-book"
+                   data-url="@Url.Action("Delete", "Book", new { masach = item.MaSach })"
+                   data-booktitle="@item.TenSach">
+                        Delete
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('a.delete-book').on('click', function (event) {
+                event.preventDefault(); // prevent the default action of the button
+
+                var url = $(this).data('url'); // get the URL to delete the book
+                var bookTitle = $(this).data('booktitle'); // get the title of the book to be deleted
+
+                // Display the confirmation dialog box
+                if (confirm('Are you sure you want to delete "' + bookTitle + '"?')) {
+                    // If the user clicks "OK", redirect to the delete URL
+                    window.location.href = url;
+                }
+            });
+        });
+    </script>
+}

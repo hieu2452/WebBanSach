@@ -8,57 +8,73 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebBanSach
 build_property.RootNamespace = WebBanSach
-build_property.ProjectDir = D:\WebBanSach\WebBanSach\WebBanSach\
+build_property.ProjectDir = C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\WebBanSach\WebBanSach\WebBanSach
+build_property.MSBuildProjectDirectory = C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Account/Login.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Account/Register.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Book/AddNewBook.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Book/AddNewBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGROZXdCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Home/Admin.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Book/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Home/Index.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/BookDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCb29rRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Home/Privacy.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/LoadBook.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2FkQm9vay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Home/User.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Shared/Error.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/_BookStore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Cb29rU3RvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/_LayoutLoginRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpblJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/_ViewImports.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/_ViewStart.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/WebBanSach/WebBanSach/WebBanSach/Views/Shared/_Layout.cshtml]
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ep83fxov2l

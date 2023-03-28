@@ -2,20 +2,23 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using WebBanSach.Models;
-using WebBanSach.Repository;
+using WebBanSach.Models.Datas;
+using WebBanSach.Repository.Interface;
 
 namespace WebBanSach.Controllers
 {
     public class BookController : Controller
     {
+        DbBookStoreContext _context = new DbBookStoreContext();
         private readonly IBookRepository _bookRepository = null;
         private readonly ILanguageRepository _languageRepository = null;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public BookController(IBookRepository bookRepository,
+        public BookController(/*DbBookStoreContext context*/ IBookRepository bookRepository,
            ILanguageRepository languageRepository,
            IWebHostEnvironment webHostEnvironment)
         {
+            /* _context = context;*/
             _bookRepository = bookRepository;
             _languageRepository = languageRepository;
             _webHostEnvironment = webHostEnvironment;
@@ -31,10 +34,11 @@ namespace WebBanSach.Controllers
             return View(model);
         }
 
+
+
         [HttpPost]
         public async Task<IActionResult> AddNewBook(BookModel bookModel)
         {
-            //bookModel.Gallery = 0;
 
             if (ModelState.IsValid)
             {
@@ -56,14 +60,81 @@ namespace WebBanSach.Controllers
 
         private async Task<string> UploadImage(string folderPath, IFormFile file)
         {
+            // Get the file extension
+            string fileExtension = Path.GetExtension(file.FileName);
 
-            folderPath += file.FileName;
+            // Generate a unique file name
+            string fileName = Path.GetFileNameWithoutExtension(file.FileName);
+            string uniqueFileName = $"{fileName}_{DateTime.Now.Ticks}{fileExtension}";
 
-            string serverFolder = Path.Combine(_webHostEnvironment.WebRootPath, folderPath);
+            // Combine the folder path and the unique file name
+            string filePath = Path.Combine(folderPath, uniqueFileName);
 
-            await file.CopyToAsync(new FileStream(serverFolder, FileMode.Create));
+            // Get the server path
+            string serverPath = Path.Combine(_webHostEnvironment.WebRootPath, filePath);
 
-            return "/" + folderPath;
+            // Check if the file type is allowed
+            if (!IsImageFileTypeAllowed(fileExtension))
+            {
+                throw new ArgumentException("Only image files of type .jpg, .jpeg, .png, .gif are allowed.");
+            }
+
+            // Copy the file to the server
+            await file.CopyToAsync(new FileStream(serverPath, FileMode.Create));
+
+            return "/" + filePath;
+        }
+
+        private bool IsImageFileTypeAllowed(string fileExtension)
+        {
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
+            return allowedExtensions.Contains(fileExtension.ToLower());
+        }
+
+
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> Edit(int masach)
+        {
+            var book = await _bookRepository.GetById(masach);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return View(book);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(TSach book)
+        {
+            if (ModelState.IsValid)
+            {
+                await _bookRepository.UpdateBook(book);
+                return RedirectToAction("LoadBook", "Home");
+            }
+
+            // If the model state is not valid, redisplay the form with validation errors
+            return View(book);
+        }
+
+
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> Delete(int masach)
+        {
+            if (ModelState.IsValid)
+            {
+                TempData["message"] = "";
+                var rs = await _bookRepository.DeleteBook(masach);
+                if (rs == 0)
+                {
+                    TempData["message"] = "Khong xoa dc san pham";
+                    return RedirectToAction("LoadBook", "Home");
+
+                }
+                return RedirectToAction("LoadBook", "Home");
+            }
+            return RedirectToAction("LoadBook", "Home");
         }
     }
 }

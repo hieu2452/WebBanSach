@@ -169,6 +169,7 @@ public partial class DbBookStoreContext : DbContext
             entity.ToTable("tUser");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.AnhDaiDien).HasMaxLength(1000);
             entity.Property(e => e.DiaChi).HasMaxLength(100);
             entity.Property(e => e.Email).HasMaxLength(100);
             entity.Property(e => e.PassW)

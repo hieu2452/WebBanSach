@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebBanSach.Models
+namespace WebBanSach.Models.Datas
 {
     public class LanguageModel
     {

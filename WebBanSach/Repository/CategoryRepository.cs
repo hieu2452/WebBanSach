@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebBanSach.Models;
+using WebBanSach.Models.Datas;
+using WebBanSach.Repository.Interface;
 
 namespace WebBanSach.Repository
 {

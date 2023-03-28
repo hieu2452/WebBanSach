@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
+    "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
   },
   "projects": {
-    "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
+    "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "projectUniqueName": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
         "projectName": "WebBanSach",
-        "projectPath": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "projectPath": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
         "packagesPath": "C:\\Users\\soica\\.nuget\\packages\\",
-        "outputPath": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\obj\\",
+        "outputPath": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\soica\\AppData\\Roaming\\NuGet\\NuGet.Config",

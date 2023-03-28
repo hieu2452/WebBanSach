@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebBanSach.Models;
 using Microsoft.AspNetCore.Identity;
-
-
+using WebBanSach.Models.Datas;
 
 namespace WebBanSach.Controllers
 {

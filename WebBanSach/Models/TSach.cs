@@ -25,6 +25,8 @@ public partial class TSach
 
     public string? Mota { get; set; }
 
+    public bool? InActive { get; set; }
+
     public virtual TNgonNgu? MaNgNavigation { get; set; }
 
     public virtual TNhaXuatBan? MaNxbNavigation { get; set; }

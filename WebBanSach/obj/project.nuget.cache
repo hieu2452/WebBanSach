@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OzHEaK77acGGN2TxjLQWISFdM6PAVBs11xsPeaMkLYXGDmCC5oeVd6ZvNCh3inklutU9cj0ddpIXDDjnBKYTDw==",
+  "dgSpecHash": "xgbU87BMQuUNLWFeUP4p1g9MLeXDgraHmiNzXhBXEbXT6mqlFpMo+hLmlFc1BZjF+Q6l310qkl/opqu7d1Jtow==",
   "success": true,
-  "projectFilePath": "D:\\WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+  "projectFilePath": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\soica\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\soica\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
