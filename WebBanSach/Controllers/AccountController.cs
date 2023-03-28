@@ -31,12 +31,12 @@ namespace WebBanSach.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new TUser { UserN = model.Name, Email = model.Email, RoleId="User" };
-                List<TUser> users = _context.TUsers.Where(x => x.Email == user.Email).ToList();
+                List<TUser> users = _context.TUsers.Where(x => x.Email == model.Email).ToList();
 
                 if (users == null)
                 {
-                    _context.TUsers.AddAsync(user);
+                    var user = new TUser { UserN = model.Name, Email = model.Email, PassW = model.Password, RoleId = "User" };
+                    await _context.TUsers.AddAsync(user);
                     await _context.SaveChangesAsync();
                     return RedirectToAction("Login", "Account");
                 }
@@ -46,7 +46,7 @@ namespace WebBanSach.Controllers
                 }
             }
 
-            return View(model);
+            return View();
         }
 
 
@@ -69,18 +69,29 @@ namespace WebBanSach.Controllers
             }
 
             var claims = new List<Claim>
-            {
-            new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.RoleId)
-            };
+                {
+                    new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.Role, user.RoleId)
+                };
 
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
             var principal = new ClaimsPrincipal(identity);
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+            if (user.RoleId == "Admin")
+            {
+                return RedirectToAction("Admin", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
 
-            return RedirectToAction(user.RoleId, "Home");
+            }
+
+            return View(model);
+
+
         }
 
         public async Task<IActionResult> Logout()

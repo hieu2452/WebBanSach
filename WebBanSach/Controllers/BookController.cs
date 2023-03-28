@@ -136,5 +136,12 @@ namespace WebBanSach.Controllers
             }
             return RedirectToAction("LoadBook", "Home");
         }
+
+
+
+        public async Task<IActionResult> AddToCart(int masach)
+        {
+            return View();
+        }
     }
 }
