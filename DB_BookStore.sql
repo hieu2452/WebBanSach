@@ -53,6 +53,9 @@ drop column roleID
 alter table tUSer
 add  roleID varchar(10) null
 
+alter table tUSer
+add AnhDaiDien [nvarchar](1000 )
+
 
 CREATE TABLE [dbo].[tTheLoai](
 	[MaTL] int NOT NULL IDENTITY(1,1),
@@ -133,6 +136,33 @@ CREATE TABLE [dbo].[tChiTietHoaDon](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 
+ALTER TABLE tChiTietHoaDon
+DROP CONSTRAINT PK_tChiTietHoaDon;
+GO
+ALTER TABLE tChiTietHoaDon
+DROP CONSTRAINT [FK_tChiTietHoaDon_tHoaDon];
+GO
+ALTER TABLE tChiTietHoaDon
+DROP CONSTRAINT [FK_tChiTietHoaDon_tSach];
+GO
+
+alter table tChiTietHoaDon
+drop column [MaHD]
+
+alter table tChiTietHoaDon
+drop column [MaSach]
+
+alter table tChiTietHoaDon
+add  [MaHD] int not null
+
+alter table tChiTietHoaDon
+add  [MaSach] int not null 
+
+ALTER TABLE tChiTietHoaDon
+ADD CONSTRAINT PK_tChiTietHoaDon PRIMARY KEY CLUSTERED ([MaHD],[MaSach]);
+GO
+
+
 CREATE TABLE [dbo].[tNgonNgu](
 	[MaNG] int NOT NULL IDENTITY(1,1),
 	[Mota] [nvarchar](100) NULL,
@@ -173,7 +203,8 @@ REFERENCES [dbo].[tSach] ([MaSach])
 insert into tUserRole(roleID,MoTa) values ('Admin','Quan ly')
 insert into tUserRole(roleID,MoTa) values ('User','Nguoi dung')
 
-insert into tUser(UserN,DiaChi,SDT,Email,passW,roleID) values ('admin','Ha Noi','0932323','admin@gmail.com','123','Admin')
+insert into tUser(ID,UserN,DiaChi,SDT,Email,passW,roleID) values ('3','admin','Ha Noi','0932323','admin@gmail.com','123','Admin')
+insert into tUser(ID,UserN,DiaChi,SDT,Email,passW,roleID) values ('4','user','Ha Noi','093232333','user@gmail.com','123','User')
 insert into tUser(UserN,DiaChi,SDT,Email,passW,roleID) values ('user','Ha Noi','093232333','user@gmail.com','123','User')
 insert into tUser(UserN,DiaChi,SDT,Email,passW,roleID) values ('user','Ha Noi','093232333','user1@gmail.com','123','User')
 
