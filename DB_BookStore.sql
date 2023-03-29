@@ -21,6 +21,9 @@ alter table tSach
 add MaNG int
 alter table tSach
 add Mota [nvarchar](500)
+alter table tSach
+add InActive bit
+
 
 CREATE TABLE [dbo].[tHoaDon](
 	[MaHD] int NOT NULL IDENTITY(1,1),
