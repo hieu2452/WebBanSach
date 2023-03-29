@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WebBanSach.Models;
 using WebBanSach.Models.Datas;
 using WebBanSach.Repository.Interface;
@@ -13,15 +14,17 @@ namespace WebBanSach.Controllers
         private readonly IBookRepository _bookRepository = null;
         private readonly ILanguageRepository _languageRepository = null;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public BookController(/*DbBookStoreContext context*/ IBookRepository bookRepository,
            ILanguageRepository languageRepository,
-           IWebHostEnvironment webHostEnvironment)
+           IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
             /* _context = context;*/
             _bookRepository = bookRepository;
             _languageRepository = languageRepository;
             _webHostEnvironment = webHostEnvironment;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         [Authorize(Policy = "AdminPolicy")]
@@ -137,10 +140,22 @@ namespace WebBanSach.Controllers
             return RedirectToAction("LoadBook", "Home");
         }
 
-
-
         public async Task<IActionResult> AddToCart(int masach)
         {
+            var book = await _bookRepository.GetById(masach);
+
+            CartItem cartItem = new CartItem()
+            {
+                MaSach = book.MaSach,
+                TenSach = book.TenSach,
+                TacGia = book.TacGia,
+                DonGia = book.DonGia,   
+                SoLuong = book.SoLuong,
+                Anh = book.Anh
+            };
+            /*var cart = _httpContextAccessor.HttpContext.Session.Get<CartItem>("CartItem") ?? new CartItem();
+*/
+
             return View();
         }
     }

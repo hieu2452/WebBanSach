@@ -2,5 +2,7 @@
 {
     public class CartModel
     {
+        public List<CartItem> Items { get; set; }
+
     }
 }

@@ -81,10 +81,14 @@ namespace WebBanSach.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
             if (user.RoleId == "Admin")
             {
+                HttpContext.Session.SetString("UserName", user.UserN.ToString());
+                HttpContext.Session.SetString("UserRole", user.RoleId.ToString());
                 return RedirectToAction("Admin", "Home");
             }
             else
             {
+                HttpContext.Session.SetString("UserName", user.UserN.ToString());
+                HttpContext.Session.SetString("UserRole", user.RoleId.ToString());
                 return RedirectToAction("Index", "Home");
 
             }
@@ -97,7 +101,8 @@ namespace WebBanSach.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-
+            HttpContext.Session.Clear();
+            HttpContext.Session.Remove("UserName");
             return RedirectToAction("Index", "Home");
         }
     }

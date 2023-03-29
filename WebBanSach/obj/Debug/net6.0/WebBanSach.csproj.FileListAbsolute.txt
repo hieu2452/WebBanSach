@@ -162,3 +162,7 @@ C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\obj\Debug\net6.0\re
 C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\obj\Debug\net6.0\WebBanSach.pdb
 C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\obj\Debug\net6.0\WebBanSach.genruntimeconfig.cache
 C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\obj\Debug\net6.0\ref\WebBanSach.dll
+C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\soica\OneDrive\BTL WebBanSach\WebBanSach\WebBanSach\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
