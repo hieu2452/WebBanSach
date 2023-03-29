@@ -59,7 +59,7 @@
 
                 <div class="add-cart">
                     <div class="button">
-                        <button>Thêm vào giỏ</button>
+                        <button id="add-to-cart">Thêm vào giỏ</button>
                     </div>
                     <div class="button">
                         <button>Mua hàng</button>
@@ -147,3 +147,27 @@
 
 <h1>BookDetails</h1>
 
+<script>
+    $(function() {
+    $('#add-to-cart').click(function() {
+        // Get the book ID from somewhere in your view
+        var bookId = 123;
+
+        // Send an Ajax request to add the book to the cart
+        $.ajax({
+            url: '/Books/AddToCart',
+            type: 'POST',
+            data: { id: bookId },
+            success: function(response) {
+                // Handle the success case here
+                // For example, show a success message or update the cart icon
+            },
+            error: function(response) {
+                // Handle the error case here
+                // For example, show an error message to the user
+            }
+        });
+    });
+});
+
+</script>

@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+/*using Newtonsoft.Json;*/
 using WebBanSach.Models;
 using WebBanSach.Models.Datas;
 using WebBanSach.Repository.Interface;
+using System.Text.Json;
+using static NuGet.Packaging.PackagingConstants;
 
 namespace WebBanSach.Controllers
 {
@@ -14,17 +16,15 @@ namespace WebBanSach.Controllers
         private readonly IBookRepository _bookRepository = null;
         private readonly ILanguageRepository _languageRepository = null;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public BookController(/*DbBookStoreContext context*/ IBookRepository bookRepository,
            ILanguageRepository languageRepository,
-           IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
+           IWebHostEnvironment webHostEnvironment)
         {
             /* _context = context;*/
             _bookRepository = bookRepository;
             _languageRepository = languageRepository;
             _webHostEnvironment = webHostEnvironment;
-            _httpContextAccessor = httpContextAccessor;
         }
 
         [Authorize(Policy = "AdminPolicy")]
@@ -47,8 +47,7 @@ namespace WebBanSach.Controllers
             {
                 if (bookModel.AnhDaiDien != null)
                 {
-                    string folder = "books/cover/";
-                    bookModel.Anh = await UploadImage(folder, bookModel.AnhDaiDien);
+                    bookModel.Anh = await UploadImage(bookModel.AnhDaiDien);
                 }
 
                 int id = await _bookRepository.AddNewBook(bookModel);
@@ -61,8 +60,10 @@ namespace WebBanSach.Controllers
             return View();
         }
 
-        private async Task<string> UploadImage(string folderPath, IFormFile file)
+        private async Task<string> UploadImage(IFormFile file)
         {
+
+            string folderPath = "books/cover/";
             // Get the file extension
             string fileExtension = Path.GetExtension(file.FileName);
 
@@ -85,7 +86,7 @@ namespace WebBanSach.Controllers
             // Copy the file to the server
             await file.CopyToAsync(new FileStream(serverPath, FileMode.Create));
 
-            return "/" + filePath;
+            return uniqueFileName;
         }
 
         private bool IsImageFileTypeAllowed(string fileExtension)
@@ -96,6 +97,7 @@ namespace WebBanSach.Controllers
 
 
         [Authorize(Policy = "AdminPolicy")]
+        [HttpGet]
         public async Task<IActionResult> Edit(int masach)
         {
             var book = await _bookRepository.GetById(masach);
@@ -111,15 +113,41 @@ namespace WebBanSach.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(TSach book)
         {
-            if (ModelState.IsValid)
+/*            if (ModelState.IsValid)
             {
+
                 await _bookRepository.UpdateBook(book);
                 return RedirectToAction("LoadBook", "Home");
-            }
+            }*/
 
-            // If the model state is not valid, redisplay the form with validation errors
-            return View(book);
+            if (ModelState.IsValid)
+            {
+                var oldBook = _context.TSaches.Find(book.MaSach);
+
+                if (oldBook == null)
+                {
+                    return NotFound();
+                }
+
+                oldBook.TenSach = book.TenSach;
+                oldBook.TacGia = book.TacGia;
+                oldBook.Mota = book.Mota;
+                oldBook.DonGia = book.DonGia;
+                oldBook.SoLuong = book.SoLuong;
+                oldBook.MaTl = book.MaTl;
+                oldBook.MaNg = book.MaNg;
+                oldBook.MaNxb = book.MaNxb;
+                oldBook.Anh = await UploadImage(book.AnhFile);
+
+                await _context.SaveChangesAsync();
+                return RedirectToAction("LoadBook", "Home");
+               }
+                // If the model state is not valid, redisplay the form with validation errors
+
+
+                return View(book);
         }
+
 
 
         [Authorize(Policy = "AdminPolicy")]
@@ -129,7 +157,7 @@ namespace WebBanSach.Controllers
             {
                 TempData["message"] = "";
                 var rs = await _bookRepository.DeleteBook(masach);
-                if (rs == 0)
+                if (rs)
                 {
                     TempData["message"] = "Khong xoa dc san pham";
                     return RedirectToAction("LoadBook", "Home");
@@ -140,9 +168,14 @@ namespace WebBanSach.Controllers
             return RedirectToAction("LoadBook", "Home");
         }
 
+        [HttpPost]
         public async Task<IActionResult> AddToCart(int masach)
         {
             var book = await _bookRepository.GetById(masach);
+
+            string cartJson = HttpContext.Session.GetString("Cart");
+
+            List<CartItem> cartItems = string.IsNullOrEmpty(cartJson) ? new List<CartItem>() : JsonSerializer.Deserialize<List<CartItem>>(cartJson);
 
             CartItem cartItem = new CartItem()
             {
@@ -150,13 +183,25 @@ namespace WebBanSach.Controllers
                 TenSach = book.TenSach,
                 TacGia = book.TacGia,
                 DonGia = book.DonGia,   
-                SoLuong = book.SoLuong,
+                SoLuong = 1,
                 Anh = book.Anh
             };
-            /*var cart = _httpContextAccessor.HttpContext.Session.Get<CartItem>("CartItem") ?? new CartItem();
-*/
 
-            return View();
+            CartItem itemInCart = cartItems.FirstOrDefault(x => x.MaSach == masach);
+
+            if (itemInCart != null)
+            {
+                itemInCart.SoLuong += 1;
+            }
+            else
+            {
+                cartItems.Add(cartItem);
+            }
+            string updatedCartJson = JsonSerializer.Serialize(cartItems);
+            HttpContext.Session.SetString("Cart", updatedCartJson);
+
+
+            return Json(new { success = true });
         }
     }
 }

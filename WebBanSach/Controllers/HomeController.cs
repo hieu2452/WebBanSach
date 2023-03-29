@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Text.Json;
 using WebBanSach.Models;
+using WebBanSach.Models.Datas;
 using WebBanSach.Repository.Interface;
 
 namespace WebBanSach.Controllers
@@ -49,6 +51,17 @@ namespace WebBanSach.Controllers
         }
 
 
+        public IActionResult Cart()
+        {
+            string cartJson = HttpContext.Session.GetString("Cart");
+            List<CartItem> cartItems = string.IsNullOrEmpty(cartJson)
+                ? new List<CartItem>()
+                : JsonSerializer.Deserialize<List<CartItem>>(cartJson);
+
+            return View(cartItems);
+        }
+
+
         [Authorize]
         public IActionResult Privacy()
         {
@@ -60,5 +73,6 @@ namespace WebBanSach.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

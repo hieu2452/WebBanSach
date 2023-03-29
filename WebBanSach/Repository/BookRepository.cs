@@ -25,6 +25,7 @@ namespace WebBanSach.Repository
 
         async Task<TSach> IBookRepository.GetById(int bookid)
         {
+
             return await _context.TSaches.FirstOrDefaultAsync(b => b.MaSach == bookid);
 
         }
@@ -51,17 +52,17 @@ namespace WebBanSach.Repository
             return book.MaSach;
         }
 
-        async Task<int> IBookRepository.DeleteBook(int id)
+        async Task<Boolean> IBookRepository.DeleteBook(int id)
         {
             var lstCt = await _context.TChiTietHoaDons.Where(x => x.MaSach == id).ToListAsync();
             if (lstCt.Any())
             {
-                return 0;
+                return false;
             }
             var book = await _context.TSaches.FirstOrDefaultAsync(b => b.MaSach == id);
-            _context.TSaches.Remove(book);
+            _context.TSaches.RemoveRange(book);
             await _context.SaveChangesAsync();
-            return 1;
+            return true;
 
         }
 

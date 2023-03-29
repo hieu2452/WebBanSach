@@ -3,7 +3,7 @@
 @inject WebBanSach.Repository.Interface.ILanguageRepository _languageRepo
 @model TSach
 
-<form asp-controller="Book" asp-action="Edit" method="post">
+<form asp-controller="Book" asp-action="Edit" method="post" enctype="multipart/form-data">
     <input asp-for="MaSach" type="hidden" />
     <div class="form-group">
         <label asp-for="TenSach" class="control-label"></label>
@@ -28,9 +28,9 @@
     </div
     
     <div class="form-group">
-        <label asp-for="MaTl" class="control-label"></label>
-        <select asp-for="MaTl" asp-items="(await _nhaxbRepo.GetNXBs()).Select(x=> new SelectListItem() { Text = x.TenNxb, Value = x.MaNxb.ToString()})" class="form-control"></select>
-        <span asp-validation-for="MaTl" class="text-danger"></span>
+        <label asp-for="MaNxb" class="control-label"></label>
+        <select asp-for="MaNxb" asp-items="(await _nhaxbRepo.GetNXBs()).Select(x=> new SelectListItem() { Text = x.TenNxb, Value = x.MaNxb.ToString()})" class="form-control"></select>
+        <span asp-validation-for="MaNxb" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="DonGia" class="control-label"></label>
@@ -50,11 +50,31 @@
         <span asp-validation-for="Mota" class="text-danger"></span>
     </div>
 
+
+    <div class="form-group">
+        <label asp-for="AnhFile" class="control-label"></label>
+        <input asp-for="AnhFile" type="file" class="form-control-file"/>
+        <span asp-validation-for="AnhFile" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <img src="@Url.Content("../books/cover"+Model.Anh)" alt="@Model.TenSach" class="img-fluid" />
+    </div>
+
+
+
     <div class="form-group">
         <label asp-for="Anh" class="control-label"></label>
-        <input asp-for="Anh" class="form-control" />
+        <input id="anh-input" type="hidden"  asp-for="Anh" class="form-control"/>
         <span asp-validation-for="Anh" class="text-danger"></span>
     </div
+
+@*    <div class="form-group">
+        <label asp-for="Anh" class="control-label"></label>
+        <input asp-for="AnhFile" type="file" class="form-control-file" />
+        <span asp-validation-for="Anh" class="text-danger"></span>
+    </div>*@
+
 
     <div class="form-group">
         <label asp-for="InActive" class="control-label"></label>
@@ -65,3 +85,4 @@
 
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
+

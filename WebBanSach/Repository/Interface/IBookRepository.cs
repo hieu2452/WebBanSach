@@ -12,6 +12,6 @@ namespace WebBanSach.Repository.Interface
 
         Task UpdateBook(TSach book);
 
-        Task<int> DeleteBook(int id);
+        Task<Boolean> DeleteBook(int id);
     }
 }
