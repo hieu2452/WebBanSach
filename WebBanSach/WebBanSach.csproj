@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <Folder Include="Views\NewFolder\" />
+    <Folder Include="wwwroot\Bookstore\.git\objects\info\" />
+    <Folder Include="wwwroot\Bookstore\.git\refs\tags\" />
     <Folder Include="wwwroot\books\cover\" />
   </ItemGroup>
 
@@ -30,6 +32,32 @@
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_LayoutLoginRegister.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="wwwroot\Bookstore\.git\config" />
+    <None Include="wwwroot\Bookstore\.git\description" />
+    <None Include="wwwroot\Bookstore\.git\HEAD" />
+    <None Include="wwwroot\Bookstore\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\Bookstore\.git\hooks\update.sample" />
+    <None Include="wwwroot\Bookstore\.git\index" />
+    <None Include="wwwroot\Bookstore\.git\info\exclude" />
+    <None Include="wwwroot\Bookstore\.git\logs\HEAD" />
+    <None Include="wwwroot\Bookstore\.git\logs\refs\heads\master" />
+    <None Include="wwwroot\Bookstore\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\Bookstore\.git\objects\pack\pack-443e121a9ede6c5b4a21af73c519a4634e920808.idx" />
+    <None Include="wwwroot\Bookstore\.git\objects\pack\pack-443e121a9ede6c5b4a21af73c519a4634e920808.pack" />
+    <None Include="wwwroot\Bookstore\.git\packed-refs" />
+    <None Include="wwwroot\Bookstore\.git\refs\heads\master" />
+    <None Include="wwwroot\Bookstore\.git\refs\remotes\origin\HEAD" />
   </ItemGroup>
 
 </Project>
