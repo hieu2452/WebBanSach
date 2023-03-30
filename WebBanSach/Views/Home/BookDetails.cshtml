@@ -17,7 +17,7 @@
                 <i class='bx bx-chevron-left'></i>
                 @if (Model.Anh != null)
                 {
-                    <img src="@Url.Content(".."+Model.Anh)" alt="Sale">
+                    <img src="@Url.Content("../books/cover/"+Model.Anh)" alt="Sale">
                 }
                 else
                 {
@@ -36,40 +36,46 @@
         </div>
 
         <!-- info -->
-        <div class="col-sm-6">
-            <div class="description-product">
-                <h1>@Model.TenSach</h1>
-                <div class="product-detail">
-                    <p>@Model.MaSach</p>
-                    <div class="rating-bar">
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                        <i class='bx bxs-star'></i>
-                    </div>
-                    <span>(0 đánh giá)</span>
-                </div>
-                <div class="product-price">
-                    <span class="sale-price">@Model.DonGia</span>
-                </div>
-                <div class="quantity">
-                    <input type="number" placeholder="Số lượng" value="0" min="0">
-                </div>
+        
 
-                <div class="add-cart">
-                    <div class="button">
-                        <button id="add-to-cart">Thêm vào giỏ</button>
+        <form method="post" enctype="multipart/form-data" asp-action="AddToCart" asp-controller="Book">
+            <div class="col-sm-6">
+                <div class="description-product">
+                    <h1>@Model.TenSach</h1>
+                    <input asp-for="MaSach" type="hidden"/>
+                    <div class="product-detail">
+                        <p>@Model.MaSach</p>
+                        <div class="rating-bar">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <span>(0 đánh giá)</span>
                     </div>
-                    <div class="button">
-                        <button>Mua hàng</button>
+                    <div class="product-price">
+                        <span class="sale-price">@Model.DonGia</span>
                     </div>
-                    <div class="button">
-                        <button><i class='bx bx-heart'></i></button>
+                    <div class="quantity">
+                        <input asp-for="SoLuongMua" type="number" placeholder="Số lượng" value="1" min="1">
+                    </div>
+
+                    <div class="add-cart">
+                        <div class="button">
+                            <button  type="submit" >Thêm vào giỏ</button>
+                        </div>
+                        <div class="button">
+                            <button>Mua hàng</button>
+                        </div>
+                        <div class="button">
+                            <button><i class='bx bx-heart'></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
+        
     </div>
 
     <div class="feed-back">
@@ -148,26 +154,26 @@
 <h1>BookDetails</h1>
 
 <script>
-    $(function() {
-    $('#add-to-cart').click(function() {
-        // Get the book ID from somewhere in your view
-        var bookId = 123;
+    $(document).ready(function () {
+        $("#addToCartBtn").on("click", function () {
+            // Get the book ID from your view model or any other data source
+            var masach = $(@Model.MaSach).val(); // for example
 
-        // Send an Ajax request to add the book to the cart
-        $.ajax({
-            url: '/Books/AddToCart',
-            type: 'POST',
-            data: { id: bookId },
-            success: function(response) {
-                // Handle the success case here
-                // For example, show a success message or update the cart icon
-            },
-            error: function(response) {
-                // Handle the error case here
-                // For example, show an error message to the user
-            }
+            // Call the AddToCart action using AJAX
+            $.ajax({
+                type: "POST",
+                url: "https://localhost:7038/Book/AddToCart",
+                data: { masach: masach },
+                success: function (response) {
+                    // Handle the response if needed
+                    console.log(response);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    // Handle the error if needed
+                    console.log(errorThrown);
+                }
+            });
         });
     });
-});
 
 </script>

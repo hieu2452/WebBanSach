@@ -8,6 +8,7 @@
 
         public string TacGia { get; set; } = null!;
 
+        public string MoTa { get; set; }
         public double? DonGia { get; set; }
 
         public int? SoLuong { get; set; }

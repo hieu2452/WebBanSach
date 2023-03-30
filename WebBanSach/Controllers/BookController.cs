@@ -169,9 +169,9 @@ namespace WebBanSach.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToCart(int masach)
+        public async Task<IActionResult> AddToCart(TSach sach)
         {
-            var book = await _bookRepository.GetById(masach);
+            var book = await _bookRepository.GetById(sach.MaSach);
 
             string cartJson = HttpContext.Session.GetString("Cart");
 
@@ -183,15 +183,16 @@ namespace WebBanSach.Controllers
                 TenSach = book.TenSach,
                 TacGia = book.TacGia,
                 DonGia = book.DonGia,   
-                SoLuong = 1,
+                SoLuong = sach.SoLuongMua,
+                MoTa = book.Mota,
                 Anh = book.Anh
             };
 
-            CartItem itemInCart = cartItems.FirstOrDefault(x => x.MaSach == masach);
+            CartItem itemInCart = cartItems.FirstOrDefault(x => x.MaSach == book.MaSach);
 
             if (itemInCart != null)
             {
-                itemInCart.SoLuong += 1;
+                itemInCart.SoLuong += sach.SoLuongMua;
             }
             else
             {
@@ -201,7 +202,8 @@ namespace WebBanSach.Controllers
             HttpContext.Session.SetString("Cart", updatedCartJson);
 
 
-            return Json(new { success = true });
+            return RedirectToAction("BookDetails","Home", new { masach = book.MaSach });
         }
+
     }
 }

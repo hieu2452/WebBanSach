@@ -6,15 +6,13 @@
 
 @model WebBanSach.Models.Datas.RegisterModel
 
-<form method="post">
+<form asp-controller="Account" asp-action="Register" method="post">
 
-    @if (ViewData["ErrorMessage"] != null)
+    @if (TempData["EmailUsed"] != null)
     {
-
-        <div class="alert alert-danger" role="alert">
-            @ViewData["ErrorMessage"]
+        <div id="email-exists-message" class="alert alert-danger">
+            @TempData["EmailUsed"]
         </div>
-
     }
     <div class="form-group">
         <label asp-for="Name"></label>
@@ -30,13 +28,23 @@
     </div>
     <div class="form-group">
         <label asp-for="Password"></label>
-        <input asp-for="Password" class="form-control" />
+        <input asp-for="Password" type="password" class="form-control" />
         <span asp-validation-for="Password" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="ConfirmPassword"></label>
-        <input asp-for="ConfirmPassword" class="form-control" />
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Sign Up</button>
 </form>
+
+
+<script>
+    const emailused = document.querySelector('#email-exists-message');
+    
+    setTimeout(() => {
+        emailused.remove();
+    }, 3000);
+
+</script>

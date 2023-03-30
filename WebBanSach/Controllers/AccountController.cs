@@ -31,22 +31,32 @@ namespace WebBanSach.Controllers
         {
             if (ModelState.IsValid)
             {
-                List<TUser> users = _context.TUsers.Where(x => x.Email == model.Email).ToList();
+                bool emailExists = await _context.TUsers.AnyAsync(u => u.Email == model.Email);
 
-                if (users == null)
+                if (emailExists)
+                {
+                    TempData["EmailUsed"] = "Email đã có người sử dụng";
+                    return View(model);
+
+                }
+                else
                 {
                     var user = new TUser { UserN = model.Name, Email = model.Email, PassW = model.Password, RoleId = "User" };
+                    TempData["Success"] = "Đăng ký thành công";
                     await _context.TUsers.AddAsync(user);
                     await _context.SaveChangesAsync();
                     return RedirectToAction("Login", "Account");
                 }
-                else
+
+
+                
+/*                else
                 {
                     ViewBag.ErrorMessage = "Email exists";
-                }
+                }*/
             }
 
-            return View();
+            return View(model);
         }
 
 
@@ -83,15 +93,36 @@ namespace WebBanSach.Controllers
             {
                 HttpContext.Session.SetString("UserName", user.UserN.ToString());
                 HttpContext.Session.SetString("UserRole", user.RoleId.ToString());
+                HttpContext.Session.SetString("UserID", user.Id.ToString());
+                if(user.AnhDaiDien == null)
+                {
+                    HttpContext.Session.SetString("UserAnh", "../users/profilepictures/profile.jpg");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("UserAnh", user.AnhDaiDien.ToString());
+                }
+                
                 return RedirectToAction("Admin", "Home");
             }
             else
             {
                 HttpContext.Session.SetString("UserName", user.UserN.ToString());
                 HttpContext.Session.SetString("UserRole", user.RoleId.ToString());
+                HttpContext.Session.SetString("UserID", user.Id.ToString());
+                if (user.AnhDaiDien == null)
+                {
+                    HttpContext.Session.SetString("UserAnh", "../users/profilepictures/profile.jpg");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("UserAnh", user.AnhDaiDien.ToString());
+                }
                 return RedirectToAction("Index", "Home");
 
             }
+
+
 
             return View(model);
 
@@ -100,10 +131,17 @@ namespace WebBanSach.Controllers
 
         public async Task<IActionResult> Logout()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             HttpContext.Session.Clear();
             HttpContext.Session.Remove("UserName");
-            return RedirectToAction("Index", "Home");
+            HttpContext.Session.Remove("UserRole");
+            HttpContext.Session.Remove("UserID");
+            HttpContext.Session.Remove("UserAnh");
+            HttpContext.Session.Remove("Cart");
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            return RedirectToAction("Login", "Account");
         }
     }
 }

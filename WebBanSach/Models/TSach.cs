@@ -17,6 +17,9 @@ public partial class TSach
 
     public int? SoLuong { get; set; }
 
+    [NotMapped]
+    public int? SoLuongMua { get; set; }
+
     public int? MaTl { get; set; }
 
     public int? MaNxb { get; set; }

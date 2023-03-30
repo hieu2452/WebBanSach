@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wFs1UYqb72Gc1gYZCaghVSB7GfW6JStUtwYR7vYI+ck=",
+  "Hash": "ZUdg3pD7snJDZnSInzfO+A44G4+518noEhNeSqYyZ7Y=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\books\\cover\\dooki1_638157303796892264.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\dooki2_638157680721466699.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "books/cover/dooki2_638157680721466699.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\books\\cover\\dooki2_638157680721466699.jpg"
     },
     {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\episto_638157314123705283.jpg",
@@ -272,12 +289,12 @@
       "OriginalItemSpec": "wwwroot\\books\\cover\\user_case.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\css\\login.css",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\css\\login.css",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/css/login.css",
+      "RelativePath": "BookStore/assets/css/login.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -286,15 +303,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\css\\login.css"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\css\\login.css"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\css\\product_details.css",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\css\\product_details.css",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/css/product_details.css",
+      "RelativePath": "BookStore/assets/css/product_details.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,15 +320,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\css\\product_details.css"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\css\\product_details.css"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\css\\style.css",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\css\\style.css",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/css/style.css",
+      "RelativePath": "BookStore/assets/css/style.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -320,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\css\\style.css"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\css\\style.css"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\bg_login.jpg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\bg_login.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/bg_login.jpg",
+      "RelativePath": "BookStore/assets/images/bg_login.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -337,15 +354,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\bg_login.jpg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\bg_login.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\cart-img.jpeg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\cart-img.jpeg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/cart-img.jpeg",
+      "RelativePath": "BookStore/assets/images/cart-img.jpeg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -354,15 +371,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\cart-img.jpeg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\cart-img.jpeg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\empty_cart.png",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\empty_cart.png",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/empty_cart.png",
+      "RelativePath": "BookStore/assets/images/empty_cart.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -371,15 +388,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\empty_cart.png"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\empty_cart.png"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\item1.jpg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\item1.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/item1.jpg",
+      "RelativePath": "BookStore/assets/images/item1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -388,15 +405,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\item1.jpg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\item1.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\logo.jpg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\logo.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/logo.jpg",
+      "RelativePath": "BookStore/assets/images/logo.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -405,15 +422,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\logo.jpg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\logo.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\slider1.jpg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\slider1.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/slider1.jpg",
+      "RelativePath": "BookStore/assets/images/slider1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -422,15 +439,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\slider1.jpg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\slider1.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\slider2.jpg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\slider2.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/slider2.jpg",
+      "RelativePath": "BookStore/assets/images/slider2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -439,15 +456,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\slider2.jpg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\slider2.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\slider3.jpg",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\slider3.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/slider3.jpg",
+      "RelativePath": "BookStore/assets/images/slider3.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -456,15 +473,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\slider3.jpg"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\slider3.jpg"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\images\\user.png",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\images\\user.png",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/images/user.png",
+      "RelativePath": "BookStore/assets/images/user.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -473,15 +490,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\images\\user.png"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\images\\user.png"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\js\\main.js",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\js\\main.js",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/js/main.js",
+      "RelativePath": "BookStore/assets/js/main.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -490,15 +507,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\js\\main.js"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\js\\main.js"
     },
     {
-      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\Bookstore\\assets\\js\\product_details.js",
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\BookStore\\assets\\js\\product_details.js",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
       "BasePath": "_content/WebBanSach",
-      "RelativePath": "Bookstore/assets/js/product_details.js",
+      "RelativePath": "BookStore/assets/js/product_details.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -507,7 +524,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Bookstore\\assets\\js\\product_details.js"
+      "OriginalItemSpec": "wwwroot\\BookStore\\assets\\js\\product_details.js"
     },
     {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\css\\site.css",
@@ -1528,6 +1545,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\users\\profilepictures\\profile.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "users/profilepictures/profile.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users\\profilepictures\\profile.jpg"
     }
   ]
 }

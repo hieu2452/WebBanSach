@@ -13,15 +13,33 @@
 }
 
 
+
+
 <form class="content-login" asp-controller="Account" asp-action="Login">
 
     <img src="../Bookstore/assets/images/logo.jpg" alt="">
     <h2>
         Đăng nhập vào BookShop
     </h2>
+    @if (TempData["Success"] != null)
+    {
+        <div id="success" class="alert alert-danger">
+            @TempData["Success"]
+        </div>
+    }
     <input asp-for="Email" type="email" class="form-control" placeholder="Email" name="Email" required>
     <input asp-for="Password" type="password" class="form-control" placeholder="Mật khẩu" name="Password" required>
     <button type="submit" class="btn-login-primary">Đăng nhập</button>
     <p>Bạn chưa có tài khoản? <a asp-controller="Account" asp-action="Register">Đăng kí</a></p>
 
 </form>
+
+
+<script>
+    const success = document.querySelector('#success');
+
+    setTimeout(() => {
+        success.remove();
+    }, 3000);
+
+</script>

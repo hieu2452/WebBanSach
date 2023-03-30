@@ -4,7 +4,8 @@ namespace WebBanSach.Models.Datas
 {
     public class RegisterModel
     {
-        [Required]
+
+        [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Please enter your email")]
@@ -13,9 +14,9 @@ namespace WebBanSach.Models.Datas
 
         [Required(ErrorMessage = "Please enter your password")]
         [DataType(DataType.Password)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         public string Password { get; set; }
 
-        [Required]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }

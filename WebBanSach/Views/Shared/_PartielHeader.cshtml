@@ -1,0 +1,66 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div id="header">
+    <div class="logo">
+        <a href="./index.html"><img src="../BookStore/assets/images/logo.jpg" alt="Logo"></a>
+    </div>
+    <div class="nav">
+        <ul class="nav-bar">
+            <li>
+                Trang chủ
+            </li>
+            <li>
+                Danh mục
+                <i class='bx bx-chevron-down'></i>
+                <ul class="menu">
+                    <div class="list-menu">
+                        <div class="item-list-menu">
+                            <h3><a href="">Sách</a></h3>
+                            <ul>
+                                <li><a href="#">Sách thiếu nhi</a></li>
+                                <li><a href="#">Sách văn học</a></li>
+                                <li><a href="#">Sách trinh thám</a></li>
+                                <li><a href="#">Sách có chữ kí</a></li>
+                                <li><a href="#">Văn phòng phẩm</a></li>
+                                <li><a href="#">Sách ngoại văn</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                Blog
+            </li>
+            <li><a href="#">Quỹ sách công cộng</a></li>
+            <li>
+                Về chúng tôi
+                <i class='bx bx-chevron-down'></i>
+                <ul class="menu">
+                    <li><a href="#footer">Về Book Shop</a></li>
+                    <li><a href="#">Chính sách thẻ thành viên</a></li>
+                    <li><a href="#">Bảo hành trọn đời</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Hệ thống đổi hàng</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="right-header">
+        <div class="search">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Tìm kiếm sản phẩm?">
+        </div>
+        <div class="actions">
+            <a asp-controller="Home" asp-action="Cart">
+                <i class='bx bxs-shopping-bag cart-header'></i>
+            </a>
+            <a asp-controller="Account" asp-action="Logout">
+                <i class='bx bxs-user'></i>
+            </a>
+        </div>
+    </div>
+</div>
