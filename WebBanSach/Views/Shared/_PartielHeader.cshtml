@@ -1,8 +1,4 @@
-﻿
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-<div id="header">
+﻿<div id="header">
     <div class="logo">
         <a href="./index.html"><img src="../BookStore/assets/images/logo.jpg" alt="Logo"></a>
     </div>
@@ -50,15 +46,18 @@
     </div>
 
     <div class="right-header">
+        <div class="menu-btn">
+            <i class='bx bx-menu'></i>
+        </div>
         <div class="search">
             <i class='bx bx-search'></i>
             <input type="text" placeholder="Tìm kiếm sản phẩm?">
         </div>
         <div class="actions">
-            <a asp-controller="Home" asp-action="Cart">
+            <a href="./cart.html">
                 <i class='bx bxs-shopping-bag cart-header'></i>
             </a>
-            <a asp-controller="Account" asp-action="Logout">
+            <a href="./login.html">
                 <i class='bx bxs-user'></i>
             </a>
         </div>

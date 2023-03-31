@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <label asp-for="MaNg" class="control-label">Ngôn ngữ</label>
-                <select asp-for="MaNg" class="form-control" asp-items="(await _languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})">
+                <select asp-for="MaNg" class="form-control" asp-items="( _languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})">
                     <option value="">Please choose your language</option>
                 </select>
                 <span asp-validation-for="MaNg" class="text-danger"></span>
@@ -35,7 +35,7 @@
 
             <div class="form-group">
                 <label asp-for="MaTl" class="control-label">Thể loại</label>
-                <select asp-for="MaTl" class="form-control" asp-items="(await _categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})">
+                <select asp-for="MaTl" class="form-control" asp-items="( _categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})">
                     <option value="">Please choose your category</option>
                 </select>
                 <span asp-validation-for="MaTl" class="text-danger"></span>
@@ -43,8 +43,8 @@
 
             <div class="form-group">
                 <label asp-for="MaNxb" class="control-label">Nhà xuất bản</label>
-                <select asp-for="MaNxb" class="form-control" asp-items="(await _nxbRepo.GetNXBs()).Select(x=> new SelectListItem() { Text = x.TenNxb, Value = x.MaNxb.ToString()})">
-                    <option value="">MaNxb choose your category</option>
+                <select asp-for="MaNxb" class="form-control" asp-items="( _nxbRepo.GetNXBs()).Select(x=> new SelectListItem() { Text = x.TenNxb, Value = x.MaNxb.ToString()})">
+                    <option value="">Please choose your category</option>
                 </select>
                 <span asp-validation-for="MaNxb" class="text-danger"></span>
             </div>

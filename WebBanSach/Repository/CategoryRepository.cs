@@ -13,13 +13,9 @@ namespace WebBanSach.Repository
         {
             _context = context;
         }
-        public async Task<List<CategoryModel>> GetCategorys()
+        public IEnumerable<TTheLoai> GetCategorys()
         {
-            return await _context.TTheLoais.Select(x => new CategoryModel()
-            {
-                MaTl = x.MaTl,
-                TenTl = x.TenTl,
-            }).ToListAsync();
+            return _context.TTheLoais;
         }
 
 

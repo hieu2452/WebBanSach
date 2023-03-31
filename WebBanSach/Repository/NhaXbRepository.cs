@@ -13,13 +13,9 @@ namespace WebBanSach.Repository
         {
             _context = context;
         }
-        public async Task<List<NhaXbModel>> GetNXBs()
+        public IEnumerable<TNhaXuatBan> GetNXBs()
         {
-            return await _context.TNhaXuatBans.Select(x => new NhaXbModel()
-            {
-                MaNxb = x.MaNxb,
-                TenNxb = x.TenNxb,
-            }).ToListAsync();
+            return _context.TNhaXuatBans.OrderBy(x => x.MaNxb);
         }
     }
 }

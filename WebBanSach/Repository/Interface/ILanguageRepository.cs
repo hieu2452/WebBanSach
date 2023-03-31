@@ -5,6 +5,6 @@ namespace WebBanSach.Repository.Interface
 {
     public interface ILanguageRepository
     {
-        Task<List<LanguageModel>> GetLanguages();
+        IEnumerable<TNgonNgu> GetLanguages();
     }
 }

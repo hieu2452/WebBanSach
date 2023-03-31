@@ -1,0 +1,12 @@
+﻿@using WebBanSach.Models.Datas;
+
+@model IEnumerable<TNhaXuatBan>
+
+<div class="sub-list-size">
+    <div class="item">
+         @foreach(var item in Model){
+            <span>@item.TenNxb</span>
+        }
+    </div>
+
+</div>

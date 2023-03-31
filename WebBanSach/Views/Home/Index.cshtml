@@ -5,9 +5,8 @@
 
 @TempData["test"]
 
-@foreach (var item in Model)
-{
-    <div class="sale-item col-md-3 col-xs-12">
+
+@*    <div class="sale-item col-md-3 col-xs-12">
         <a href="./product_details.html" class="image-item">
             @if (item.Anh != null)
             {
@@ -15,7 +14,7 @@
             }
             else
             {
-                <img src="../Bookstore/assets/images/item1.jpg" alt="Sale">
+                <img src="../BookStore/assets/images/item1.jpg" alt="Sale">
             }
         </a>
         <div class="info-item">
@@ -27,9 +26,45 @@
             </div>
             <div class="price">
                 <span class="sale-price">@item.DonGia</span>
-                <a sp-controller="Home" asp-action="BookDetails"
+                <a asp-controller="Home" asp-action="BookDetails"
                asp-route-masach="@item.MaSach"><i class='bx bx-shopping-bag'></i></a>
             </div>
         </div>
+    </div>*@
+
+
+    @foreach(var item in Model){
+    <div class="sale-item col-md-3 col-xs-12">
+        @*<span class="sale">-50<span>%</span></span>*@
+        <a href="./product_details.html" class="image-item">
+            @if (item.Anh != null)
+            {
+                <img src="@Url.Content("../books/cover/"+item.Anh)" alt="Sale">
+            }
+            else
+            {
+                <img src="../BookStore/assets/images/item1.jpg" alt="Sale">
+            }
+        </a>
+        <div class="info-item">
+            <div class="name-item">
+                <a asp-controller="Home" asp-action="BookDetails"
+               asp-route-masach="@item.MaSach">
+                    @item.TenSach
+                </a>
+            </div>
+            <div class="price">
+                <span class="sale-price">52.200đ<span>58.000đ</span></span>
+                <a asp-controller="Home" asp-action="BookDetails"
+               asp-route-masach="@item.MaSach">
+                    <i class='bx bx-shopping-bag'></i>
+                </a>
+
+            </div>
+        </div>
     </div>
-}
+
+    }
+
+
+

@@ -14,13 +14,9 @@ namespace WebBanSach.Repository
             _context = context;
         }
 
-        public async Task<List<LanguageModel>> GetLanguages()
+        public IEnumerable<TNgonNgu> GetLanguages()
         {
-            return await _context.TNgonNgus.Select(x => new LanguageModel()
-            {
-                MaNg = x.MaNg,
-                Mota = x.Mota,
-            }).ToListAsync();
+            return _context.TNgonNgus;
         }
     }
 }

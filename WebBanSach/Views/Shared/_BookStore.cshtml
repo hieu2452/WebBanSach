@@ -9,6 +9,7 @@
     <link rel="icon" href="../BookStore/assets/images/logo.jpg" type="image/x-icon">
     <!-- Link css -->
     <link rel="stylesheet" href="../BookStore/assets/css/style.css">
+    <link rel="stylesheet" href="../BookStore/assets/css/responsiveMain.css">
     <!-- Link Icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link boostrap -->
@@ -28,13 +29,92 @@
         <!-- Content -->
         <div id="content">
             <!-- Sales -->
-            @RenderBody()
+            <div class="home-sales">
+                <div class="header-content">
+                    <div class="title">
+                        Danh Sách sản phẩm
+                    </div>
+                    <div class="filter-btn">
+                        <p>
+                            Lọc
+                        </p>
+                        <i class='bx bx-filter-alt'></i>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @RenderBody()
+                </div>
+            </div>
         </div>
         <!-- End Content -->
         <!-- Footer -->
         @Html.Partial("_PartialFooter")
         <!-- End Footer -->
     </div>
+
+    <div class="filter-modal">
+        <div class="filter-content-modal">
+            <div class="header-filter-modal">
+                <div class="filter-title">
+                    Lọc & Sắp xếp
+                </div>
+                <div class="close-modal-btn">
+                    <p>
+                        Clear All
+                    </p>
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+            <div class="content-filter-modal">
+                <div class="filter-apply">
+                    <p>
+                        Bộ lọc được áp dụng
+                    </p>
+                    <ul>
+                        <li><i class='bx bx-x'></i>Nxb Kim Đồng</li>
+                        <li><i class='bx bx-x'></i>Nxb Hà Nội</li>
+                        <li><i class='bx bx-x'></i>20.000đ</li>
+                        <li><i class='bx bx-x'></i>20.000đ</li>
+                        <li><i class='bx bx-x'></i>20.000đ</li>
+                        <li><i class='bx bx-x'></i>20.000đ</li>
+                        <li><i class='bx bx-x'></i>20.000đ</li>
+                        <li><i class='bx bx-x'></i>20.000đ</li>
+
+                    </ul>
+                </div>
+
+                <div class="sort">
+                    Lọc
+                    <ul>
+                        <li>
+                            <p class="title-sidebar">Nhà xuất bản</p>
+                            @await Component.InvokeAsync("NhaXuatBan")
+                        </li>
+                        <li>
+                            <p class="title-sidebar">Mức giá</p>
+                            <div class="sub-list-price">
+                                <div class="item">
+                                    <span>0 - 1.000.000đ</span>
+                                    <span>1.000.000đ - 2.000.000đ</span>
+                                    <span>2.000.000đ - 5.000.000đ</span>
+                                    <span>5.000.000đ - 7.000.000đ</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-filter-modal">
+                <button class="footer-filter-btn">Áp dụng >></button>
+            </div>
+        </div>
+    </div>
+    <!-- ScrollTop -->
+    <button class="btn-scroll-top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
     <script src="../BookStore/assets/js/main.js"></script>
 </body>
 </html>

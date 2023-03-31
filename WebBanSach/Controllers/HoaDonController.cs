@@ -19,7 +19,7 @@ namespace WebBanSach.Controllers
         [HttpPost]
         public IActionResult ThemHoaDon([FromForm]List<CartItem> cartItems)
         {
-            TempData["test"] = cartItems[0].TenSach;
+           
             int userid = Int32.Parse(HttpContext.Session.GetString("UserID"));
             /*string cartJson = HttpContext.Session.GetString("Cart");
             List<CartItem> cartItems1 = JsonSerializer.Deserialize<List<CartItem>>(cartJson);*/

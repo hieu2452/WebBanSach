@@ -5,6 +5,6 @@ namespace WebBanSach.Repository.Interface
 {
     public interface ICategoryRepository
     {
-        Task<List<CategoryModel>> GetCategorys();
+        IEnumerable<TTheLoai> GetCategorys();
     }
 }

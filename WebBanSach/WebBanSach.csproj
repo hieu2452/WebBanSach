@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\NewFolder\" />
     <Folder Include="wwwroot\books\cover\" />
   </ItemGroup>
 
