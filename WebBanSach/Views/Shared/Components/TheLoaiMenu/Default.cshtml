@@ -1,67 +1,67 @@
 ﻿@using WebBanSach.Models.Datas;
 
 @model IEnumerable<TTheLoai>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-   <li>
-        Danh mục
-        <i class='bx bx-chevron-down'></i>
-        <ul class="menu">
-            <div class="list-menu">
-                <div class="item-list-menu">
-                    <h3><a href="">Sách</a></h3>
-                    <ul>
-                        @foreach (var item in Model)
-                        {
-                        var getUrl = "https://localhost:7038/api/ProductRestController/" + item.MaTl;
+<li>
+    Danh mục
+    <i class='bx bx-chevron-down'></i>
+    <ul class="menu">
+        <div class="list-menu">
+            <div class="item-list-menu">
+                <h3><a href="">Sách</a></h3>
+                <ul>
+                    @foreach (var item in Model)
+                    {
+                        var getUrl = "https://localhost:7038/api/productapi/" + item.MaTl.ToString();
                         <li><a style="cursor:pointer" onclick="ShowProductByCategory('@getUrl'); return false;">@item.TenTl</a></li>
-                        }
-                   
-                    </ul>
-                </div>
+                    }
+                </ul>
             </div>
-        </ul>
-    </li>
+        </div>
+    </ul>
+</li>
 
 <script>
-
-    <script>
-        function ShowProductByCategory(getUrl) {
-            var str = '';
-            $.ajax({
-                type: 'GET',
-                url: getUrl,
-                dataType: 'json',
-                success: function (data) {
-                    $.each(data, function (key, item) {
-                        str += '<div class="sale-item col-md-3 col-xs-12">';
-                        str += '<a href="./product_details.html" class="image-item">';
-                        if (item.Anh != null) {
-                            str += '<img src="' + item.Anh + '" alt="Sale">';
-                        } else {
-                            str += '<img src="../BookStore/assets/images/item1.jpg" alt="Sale">';
-                        }
-                        str += '</a>';
-                        str += '<div class="info-item">';
-                        str += '<div class="name-item">';
-                        str += '<a asp-controller="Home" asp-action="BookDetails" asp-route-masach="' + item.MaSach + '">';
-                        str += item.TenSach;
-                        str += '</a>';
-                        str += '</div>';
-                        str += '<div class="price">';
-                        str += '<span class="sale-price">52.200đ<span>58.000đ</span></span>';
-                        str += '<a asp-controller="Home" asp-action="BookDetails" asp-route-masach="' + item.MaSach + '">';
-                        str += '<i class="bx bx-shopping-bag"></i>';
-                        str += '</a>';
-                        str += '</div>';
-                        str += '</div>';
-                        str += '</div>';
-                    });
-                    $('#divmain').html(str);
-                },
-                error: function (xhr) {
-                    alert(xhr.responseText);
-                }
-            });
-        }
+    function ShowProductByCategory(getUrl) {
+        var str = '';
+        $.ajax({
+            type: 'GET',
+            url: getUrl,
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $.each(data, function (key, item) {
+                    str += '<div class="sale-item col-md-3 col-xs-12">';
+                    str += '<a href="./product_details.html" class="image-item">';
+                    if (item.anh != null) {
+                        str += '<img src="' + item.anh + '" alt="Sale">';
+                    } else {
+                        str += '<img src="../BookStore/assets/images/item1.jpg" alt="Sale">';
+                    }
+                    str += '</a>';
+                    str += '<div class="info-item">';
+                    str += '<div class="name-item">';
+                    str += '<a asp-controller="Home" asp-action="BookDetails" asp-route-masach="' + item.maSp + '">';
+                    str += item.tenSp;
+                    str += '</a>';
+                    str += '</div>';
+                    str += '<div class="price">';
+                    str += '<span class="sale-price">52.200đ<span>58.000đ</span></span>';
+                    str += '<a asp-controller="Home" asp-action="BookDetails" asp-route-masach="' + item.maSp + '">';
+                    str += '<i class="bx bx-shopping-bag"></i>';
+                    str += '</a>';
+                    str += '</div>';
+                    str += '</div>';
+                    str += '</div>';
+                });
+                console.log(str);
+                $('#main-product').html(str);
+            },
+            error: function (xhr) {
+                console.log('fali roi hieu oi');
+                alert(xhr.responseText);
+            }
+        });
+    }
 </script>

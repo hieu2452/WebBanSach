@@ -6,7 +6,7 @@ namespace WebBanSach.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductRestController : ControllerBase
+    public class ProductAPI : ControllerBase
     {
         DbBookStoreContext db = new DbBookStoreContext();
 
