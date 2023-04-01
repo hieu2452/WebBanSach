@@ -1,0 +1,41 @@
+﻿@using WebBanSach.Models.Datas;
+@{
+    ViewData["Title"] = "HoaDonMuaHang";
+    Layout = "~/Views/Shared/_BookStore.cshtml";
+}
+
+@model IEnumerable<HoaDonModel>
+
+<h1>My Bills</h1>
+
+@foreach (var bill in Model)
+{
+    <h2>Bill ID: @bill.MaHD</h2>
+    <p>Date created: @bill.ngaytao</p>
+    <p>User Name: @bill.UserN</p>
+    <p>Phone Number: @bill.SDT</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in bill.bookDetail)
+            {
+                <tr>
+                    <td>@book.TenSach</td>
+                    <td>@book.DonGia</td>
+                    <td>@book.SoLuong</td>
+                </tr>
+            }
+            <tr>
+                <td>Tong hoa don</td>
+                <td>@bill.tongTien</td> 
+            </tr>
+        </tbody>
+    </table>
+}
+

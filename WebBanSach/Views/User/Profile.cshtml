@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_LayoutUserProfile.cshtml";
+}
+
+@model TUser
+
+<div id="content-profile">
+    <div class="row profile">
+        <div class="left-profile col-md-3">
+            <div class="sidebar-profile">
+
+                @if(Model.AnhDaiDien == null)
+                {
+                    <img src="../users/profilepictures/profile.jpg" alt="User">
+                }else{
+                    <img src="@Url.Content("../users/profilepictures/"+Model.AnhDaiDien)" alt="User">
+                }
+                <h3>@Model.UserN</h3>
+                <p>@Model.Email</p>
+            </div>
+        </div>
+
+        <div class="right-profile col-md-9">
+            <table class="table">
+                <thead class="thead">
+                    <tr>
+                        <td>Tên tài khoản</td>
+                        <td>Địa chỉ</td>
+                        <td>Điện thoại</td>
+                        <td>Email</td>
+                        <td>Ngày sinh</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.UserN</td>
+                        <td>@Model.DiaChi</td>
+                        <td>@Model.Sdt</td>
+                        <td>@Model.Email</td>
+                        <td>17/10/2002</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="./edit-profile.html" class="btn-fix-profile">Sửa</a>
+        </div>
+    </div>
+
+</div>
+

@@ -22,31 +22,7 @@
         @Html.Partial("_PartielHeader")
         <!-- End Header -->
         <!-- Slider -->
-        <div id="slider">
-            <img src="../BookStore/assets/images/slider1.jpg" alt="Slider">
-        </div>
-        <!-- End Slider -->
-        <!-- Content -->
-        <div id="content">
-            <!-- Sales -->
-            <div class="home-sales">
-                <div class="header-content">
-                    <div class="title">
-                        Danh Sách sản phẩm
-                    </div>
-                    <div class="filter-btn">
-                        <p>
-                            Lọc
-                        </p>
-                        <i class='bx bx-filter-alt'></i>
-                    </div>
-                </div>
-
-                <div class="row">
-                    @RenderBody()
-                </div>
-            </div>
-        </div>
+        @RenderBody()         
         <!-- End Content -->
         <!-- Footer -->
         @Html.Partial("_PartialFooter")
@@ -116,5 +92,6 @@
         <i class='bx bx-chevron-up'></i>
     </button>
     <script src="../BookStore/assets/js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>

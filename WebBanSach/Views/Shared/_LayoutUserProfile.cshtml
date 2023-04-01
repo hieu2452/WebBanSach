@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>Trang cá nhân</title>
     <!-- Link icon tab -->
     <link rel="icon" href="../BookStore/assets/images/logo.jpg" type="image/x-icon">
     <!-- Link css -->
-    <link rel="stylesheet" href="../BookStore/assets/css/login.css">
+    <link rel="stylesheet" href="../BookStore/assets/css/style.css">
+    <link rel="stylesheet" href="../BookStore/assets/css/responsiveMain.css">
+
     <!-- Link Icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link boostrap -->
@@ -16,8 +18,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-login">
-            @RenderBody()
+    <div id="main">
+        @Html.Partial("_PartielHeader")
+
+        @RenderBody()
+
+        @Html.Partial("_PartialFooter")
     </div>
 </body>
 </html>

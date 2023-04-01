@@ -62,6 +62,33 @@ namespace WebBanSach.Controllers
         }
 
 
+        public IActionResult HoaDonMuaHang()
+        {
+            var bills = from h in _context.THoaDons
+                        join u in _context.TUsers on h.Id equals u.Id
+                        join c in _context.TChiTietHoaDons on h.MaHd equals c.MaHd
+                        join s in _context.TSaches on c.MaSach equals s.MaSach
+                        group new {h,u,c,s} by new {h.MaHd, h.Id } into g
+                        select new HoaDonModel
+                        {
+                            MaHD = g.Key.MaHd,
+                            UserN = g.First().u.UserN,
+                            ngaytao = (DateTime)g.First().h.NgayTao,
+                            SDT = g.First().u.Sdt,
+                            bookDetail = g.Select(x => new BookDetailModel
+                            {
+                                TenSach = x.s.TenSach,
+                                SoLuong = (int)x.c.SoLuong,
+                                DonGia = (int)x.s.DonGia
+                            }).ToList(),
+                            tongTien = (double)g.Sum(x => x.s.DonGia * x.c.SoLuong)
+                        };
+
+            return View(bills);
+        }
+
+
+
         [Authorize]
         public IActionResult Privacy()
         {
@@ -73,6 +100,8 @@ namespace WebBanSach.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
 
     }
 }

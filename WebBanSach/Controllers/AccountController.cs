@@ -6,6 +6,7 @@ using System.Security.Claims;
 using WebBanSach.Models;
 using Microsoft.AspNetCore.Identity;
 using WebBanSach.Models.Datas;
+using System.Text.Json;
 
 namespace WebBanSach.Controllers
 {
@@ -89,11 +90,15 @@ namespace WebBanSach.Controllers
             var principal = new ClaimsPrincipal(identity);
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+            string userif = JsonSerializer.Serialize(user);
+            HttpContext.Session.SetString("UserInfo", userif);
+
             if (user.RoleId == "Admin")
             {
-                HttpContext.Session.SetString("UserName", user.UserN.ToString());
+                /*HttpContext.Session.SetString("UserName", user.UserN.ToString());
                 HttpContext.Session.SetString("UserRole", user.RoleId.ToString());
-                HttpContext.Session.SetString("UserID", user.Id.ToString());
+                HttpContext.Session.SetString("UserID", user.Id.ToString());*/
                 if(user.AnhDaiDien == null)
                 {
                     HttpContext.Session.SetString("UserAnh", "../users/profilepictures/profile.jpg");
@@ -107,9 +112,9 @@ namespace WebBanSach.Controllers
             }
             else
             {
-                HttpContext.Session.SetString("UserName", user.UserN.ToString());
+                /*HttpContext.Session.SetString("UserName", user.UserN.ToString());
                 HttpContext.Session.SetString("UserRole", user.RoleId.ToString());
-                HttpContext.Session.SetString("UserID", user.Id.ToString());
+                HttpContext.Session.SetString("UserID", user.Id.ToString());*/
                 if (user.AnhDaiDien == null)
                 {
                     HttpContext.Session.SetString("UserAnh", "../users/profilepictures/profile.jpg");

@@ -19,15 +19,22 @@ namespace WebBanSach.Controllers
         [HttpPost]
         public IActionResult ThemHoaDon([FromForm]List<CartItem> cartItems)
         {
-           
-            int userid = Int32.Parse(HttpContext.Session.GetString("UserID"));
+
+            /* int userid = Int32.Parse(HttpContext.Session.GetString("UserID"));*/
             /*string cartJson = HttpContext.Session.GetString("Cart");
             List<CartItem> cartItems1 = JsonSerializer.Deserialize<List<CartItem>>(cartJson);*/
+
+
+            string userif =  HttpContext.Session.GetString("UserInfo");
+
+            TUser user = new TUser();
+
+            user = JsonSerializer.Deserialize<TUser>(userif);
 
             THoaDon hoadon = new THoaDon()
             {
                 NgayTao = DateTime.Now,
-                Id = userid,
+                Id = user.Id,
             };
 
             _context.THoaDons.Add(hoadon);
@@ -59,5 +66,9 @@ namespace WebBanSach.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
+
+
     }
 }
