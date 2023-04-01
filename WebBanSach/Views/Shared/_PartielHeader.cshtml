@@ -7,25 +7,7 @@
             <li>
                 Trang chủ
             </li>
-            <li>
-                Danh mục
-                <i class='bx bx-chevron-down'></i>
-                <ul class="menu">
-                    <div class="list-menu">
-                        <div class="item-list-menu">
-                            <h3><a href="">Sách</a></h3>
-                            <ul>
-                                <li><a href="#">Sách thiếu nhi</a></li>
-                                <li><a href="#">Sách văn học</a></li>
-                                <li><a href="#">Sách trinh thám</a></li>
-                                <li><a href="#">Sách có chữ kí</a></li>
-                                <li><a href="#">Văn phòng phẩm</a></li>
-                                <li><a href="#">Sách ngoại văn</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </ul>
-            </li>
+            @await Component.InvokeAsync("TheLoaiMenu")
             <li>
                 Blog
             </li>

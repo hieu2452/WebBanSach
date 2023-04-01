@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
+    "C:\\Users\\hieut\\OneDrive\\Desktop\\ky2-nam 3\\ASP.net\\WebBanSachM2\\WebBanSach\\WebBanSach.csproj": {}
   },
   "projects": {
-    "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
+    "C:\\Users\\hieut\\OneDrive\\Desktop\\ky2-nam 3\\ASP.net\\WebBanSachM2\\WebBanSach\\WebBanSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "projectUniqueName": "C:\\Users\\hieut\\OneDrive\\Desktop\\ky2-nam 3\\ASP.net\\WebBanSachM2\\WebBanSach\\WebBanSach.csproj",
         "projectName": "WebBanSach",
-        "projectPath": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
-        "packagesPath": "C:\\Users\\soica\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\obj\\",
+        "projectPath": "C:\\Users\\hieut\\OneDrive\\Desktop\\ky2-nam 3\\ASP.net\\WebBanSachM2\\WebBanSach\\WebBanSach.csproj",
+        "packagesPath": "C:\\Users\\hieut\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hieut\\OneDrive\\Desktop\\ky2-nam 3\\ASP.net\\WebBanSachM2\\WebBanSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\soica\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hieut\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

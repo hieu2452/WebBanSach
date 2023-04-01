@@ -35,6 +35,7 @@ builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
 builder.Services.AddScoped<INhaXbRepository, NhaXbRepository>();
+builder.Services.AddScoped<ITheLoaiRepository, TheLoaiRepository>();
 
 builder.Services.AddSession();
 
