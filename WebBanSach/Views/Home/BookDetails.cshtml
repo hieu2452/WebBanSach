@@ -7,7 +7,7 @@
 
 <div id="content-product-details">
     <div class="header-content">
-        <a href="./index.html">@*Trang chủ -</a> <a href="">Sách trinh thám*@ @*@Model.ttheloai.TenTl*@ </a>
+        <a href="./index.html">Trang chủ -</a> <a href="">Sách trinh thám</a>
     </div>
 
     <div class="info-product row">
@@ -21,28 +21,28 @@
                 }
                 else
                 {
-                    <img src="../Bookstore/assets/images/item1.jpg" alt="Sale">
+                    <img src="../BookStoreRC/assets/images/item1.jpg" alt="Sale">
                 }
                 <i class='bx bx-chevron-right'></i>
             </div>
+
             <div class="list-img col-sm-2">
                 <i class='bx bx-chevron-up'></i>
-                <img src="./assets/images/item1.jpg" alt="Ảnh">
-                <img src="./assets/images/item1.jpg" alt="Ảnh">
-                <img src="./assets/images/item1.jpg" alt="Ảnh">
-                <img src="./assets/images/item1.jpg" alt="Ảnh">
+                <img src="../BookStoreRC/assets/images/item1.jpg" alt="Ảnh">
+                <img src="../BookStoreRC/assets/images/item1.jpg" alt="Ảnh">
+                <img src="../BookStoreRC/assets/images/item1.jpg" alt="Ảnh">
+                <img src="../BookStoreRC/assets/images/item1.jpg" alt="Ảnh">
                 <i class='bx bx-chevron-down'></i>
             </div>
         </div>
 
         <!-- info -->
-        
 
-        <form method="post" enctype="multipart/form-data" asp-action="AddToCart" asp-controller="Book">
             <div class="col-sm-6">
                 <div class="description-product">
                     <h1>@Model.TenSach</h1>
-                    <input asp-for="MaSach" type="hidden"/>
+                   <form method="post" enctype="multipart/form-data" asp-action="AddToCart" asp-controller="Book">
+                    <input asp-for="MaSach" type="hidden" />
                     <div class="product-detail">
                         <p>@Model.MaSach</p>
                         <div class="rating-bar">
@@ -63,7 +63,7 @@
 
                     <div class="add-cart">
                         <div class="button">
-                            <button  type="submit" >Thêm vào giỏ</button>
+                            <button type="submit">Thêm vào giỏ</button>
                         </div>
                         <div class="button">
                             <button>Mua hàng</button>
@@ -72,10 +72,12 @@
                             <button><i class='bx bx-heart'></i></button>
                         </div>
                     </div>
+
+                   </form>
+
                 </div>
             </div>
-        </form>
-        
+
     </div>
 
     <div class="feed-back">
@@ -151,29 +153,10 @@
 </div>
 
 
-<h1>BookDetails</h1>
 
-<script>
-    $(document).ready(function () {
-        $("#addToCartBtn").on("click", function () {
-            // Get the book ID from your view model or any other data source
-            var masach = $(@Model.MaSach).val(); // for example
 
-            // Call the AddToCart action using AJAX
-            $.ajax({
-                type: "POST",
-                url: "https://localhost:7038/Book/AddToCart",
-                data: { masach: masach },
-                success: function (response) {
-                    // Handle the response if needed
-                    console.log(response);
-                },
-                error: function (xhr, textStatus, errorThrown) {
-                    // Handle the error if needed
-                    console.log(errorThrown);
-                }
-            });
-        });
-    });
 
-</script>
+
+
+
+<script src="../BookStoreRC/assets/js/product_details.js"></script>

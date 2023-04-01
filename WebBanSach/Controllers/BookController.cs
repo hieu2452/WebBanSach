@@ -205,5 +205,39 @@ namespace WebBanSach.Controllers
             return RedirectToAction("BookDetails","Home", new { masach = book.MaSach });
         }
 
+
+
+        public async Task<IActionResult> RemoveFromCart(int masach)
+        {
+           
+            string cartJson = HttpContext.Session.GetString("Cart");
+            List<CartItem> cartItems = string.IsNullOrEmpty(cartJson)
+                ? new List<CartItem>()
+                : JsonSerializer.Deserialize<List<CartItem>>(cartJson);
+
+            // CartItem item = cartItems.FirstOrDefault(x => x.MaSach == masach);
+
+            //cartItems.Remove(cartItems.FirstOrDefault(x => x.MaSach == masach));
+
+            int indexToRemove = -1;
+            for (int i = 0; i < cartItems.Count(); i++)
+            {
+                if (cartItems[i].MaSach == masach)
+                {
+                    indexToRemove = i;
+                    break;
+                }
+            }
+
+            if (indexToRemove != -1)
+            {
+                cartItems.RemoveAt(indexToRemove);
+            }
+            string updatedCartJson = JsonSerializer.Serialize(cartItems);
+            HttpContext.Session.SetString("Cart", updatedCartJson);
+
+            return RedirectToAction("Cart", "Home");
+        }
+
     }
 }

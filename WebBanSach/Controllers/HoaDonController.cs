@@ -62,8 +62,8 @@ namespace WebBanSach.Controllers
             }
 
 
-            
 
+            //return RedirectToAction("BookDetails", "Home", new { masach = book.MaSach });
             return RedirectToAction("Index", "Home");
         }
 

@@ -7,17 +7,15 @@
 
 @model List<CartItem>
 
+
 <!-- Add this code after your table rows loop -->
-<h1>Shopping Cart</h1>
 
-@if (Model.Count == 0)
-{
-    <p>Your cart is empty.</p>
-}
-else
-{
 
-    <div id="content-cart">
+    <div style="height: 550px; overflow: auto;" id="content-cart">
+        @if (Model.Count == 0)
+        {
+            <p>Your cart is empty.</p>
+        }else{
         <h2 class="title-cart">
             Giỏ hàng
         </h2>
@@ -29,9 +27,6 @@ else
                     </div>
                     <div class="label-item col-md-2">
                         Tên sản phẩm
-                    </div>
-                    <div class="label-item col-md-2">
-                        Mô tả
                     </div>
                     <div class="label-item col-md-2">
                         Giá
@@ -61,27 +56,26 @@ else
                             @Model[i].TenSach
                         </div>
                         <div class="product-item col-md-2">
-                            @Model[i].MoTa
-                        </div>
-                        <div class="product-item col-md-2">
                             @Model[i].DonGia
                         </div>
                         <div class="product-item col-md-2">
-                            <input asp-for="@Model[i].SoLuong"  name="cartItems[@i].SoLuong">
+                            <input asp-for="@Model[i].SoLuong" name="cartItems[@i].SoLuong">
                         </div>
                         <div class="product-item col-md-2">
                             @(Model[i].DonGia * Model[i].SoLuong)
                         </div>
                         <div class="product-item col-md-2">
-                            <button>Xóa</button>
+                            <a asp-action="RemoveFromCart" asp-controller="Book" asp-route-masach="@Model[i].MaSach" class="btn">Xóa</a>
                         </div>
                     </div>
                 }
             </div>
-            <button type="submit">Submit</button>
+            <button class="footer-filter-btn cart-btn">Đặt ngay</button>
         </form>
+        }
+
     </div>
-}
+
 
 
 
