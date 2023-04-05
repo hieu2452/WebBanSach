@@ -5,6 +5,7 @@ using System.Text.Json;
 using WebBanSach.Models;
 using WebBanSach.Models.Datas;
 using WebBanSach.Repository.Interface;
+using X.PagedList;
 
 namespace WebBanSach.Controllers
 {
@@ -26,12 +27,14 @@ namespace WebBanSach.Controllers
             return View();
         }
 
-        [Authorize(Policy = "UserPolicy")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
+            int pageSize = 8;
+            int pageNumber = page == null || page <= 0 ? 1 : page.Value;
             var lst = await _bookRepository.GetAllBooks();
+            PagedList<TSach> lstbooks = new PagedList<TSach>(lst, pageNumber, pageSize);
 
-            return View(lst);
+            return View(lstbooks);
         }
 
 
@@ -50,7 +53,8 @@ namespace WebBanSach.Controllers
             return View(lst);
         }
 
-
+        [Authorize]
+        [Authorize(Policy = "UserPolicy")]
         public IActionResult Cart()
         {
             string cartJson = HttpContext.Session.GetString("Cart");
@@ -61,7 +65,8 @@ namespace WebBanSach.Controllers
             return View(cartItems);
         }
 
-
+        [Authorize]
+        [Authorize(Policy = "UserPolicy")]
         public IActionResult HoaDonMuaHang()
         {
             string userif = HttpContext.Session.GetString("UserInfo");

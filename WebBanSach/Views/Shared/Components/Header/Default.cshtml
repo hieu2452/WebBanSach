@@ -1,7 +1,7 @@
 ﻿
 <div id="header">
     <div class="logo">
-        <a href="./index.html"><img src="../BookStoreRC/assets/images/logo.jpg" alt="Logo"></a>
+        <a asp-controller="Home" asp-action="Index"><img src="../BookStoreRC/assets/images/logo.jpg" alt="Logo"></a>
     </div>
     <div class="nav">
         <ul class="nav-bar">
@@ -52,7 +52,7 @@
             <input type="text" placeholder="Tìm kiếm sản phẩm?">
         </div>
         <div class="actions">
-            <a href="./cart.html">
+            <a asp-controller="Home" asp-action="Cart">
                 <div class="header_cart">
                     <div class="header_cart-warp">
                         <i class='bx bxs-shopping-bag cart-header'></i>
@@ -72,24 +72,27 @@
                         <i class='bx bxs-user'></i>
                     </a>
                 </div>
-                @if(TempData["user"] != null){
-                  <ul class="dropdown__list">
-                    <li class="dropdown__item">
-                        <a href="#" class="dropdown__text">Thông tin tài khoản</a>
-                    </li>
-                    <li class="dropdown__item">
-                        <a href="#" class="dropdown__text">Đơn mua</a>
-                    </li>
-                    <li class="dropdown__item">
-                        <a href="#" class="dropdown__text">Đăng xuất</a>
-                    </li>
-                 </ul>
-                }else{
-                <ul class="dropdown__list">
-                    <li class="dropdown__item">
-                        <a href="#" class="dropdown__text">Đăng nhập</a>
-                    </li>
-                </ul>
+                @if (ViewBag.Userif != null)
+                {
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">
+                            <a asp-controller="user" asp-action="profile" class="dropdown__text">Thông tin tài khoản</a>
+                        </li>
+                        <li class="dropdown__item">
+                            <a href="#" class="dropdown__text">Đơn mua</a>
+                        </li>
+                        <li class="dropdown__item">
+                            <a asp-controller="account" asp-action="logout" class="dropdown__text">Đăng xuất</a>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="dropdown__list">
+                        <li class="dropdown__item">
+                            <a href="#" class="dropdown__text">Đăng nhập</a>
+                        </li>
+                    </ul>
                 }
 
             </div>

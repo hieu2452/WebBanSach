@@ -715,3 +715,143 @@ button:hover{
     width: 100%;
     height: 50px;
 }
+/* Hoang */
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background: #ff5722;
+    border-radius: 10px;
+    position: absolute;
+    right: 5px;
+}
+
+.actions {
+    position: relative;
+}
+
+.right-header {
+    padding-right: 100px;
+}
+
+.bx {
+    padding: 0 5px;
+}
+
+.header_cart {
+}
+
+.header_cart-warp {
+    position: relative;
+    display: inline-block;
+    padding: 0 8px;
+}
+
+.header_cart_list {
+    position: absolute;
+    top: calc(100% + 6px);
+    background-color: #E7E8E9;
+    width: 500px;
+    right: 0px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3.125rem 0 rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.header_cart-no-cart-img {
+    width: 100%;
+    height: 200px;
+}
+
+.no_cart {
+    padding: 10px 0;
+}
+
+.header_cart_list-no_cart_msg {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.header_cart:hover .header_cart_list {
+    display: block;
+}
+
+.dropdown {
+    width: 100%;
+    position: relative;
+}
+
+.dropdown__select {
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown__list {
+    background-color: #dadce0;
+    border-radius: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 200px;
+    display: none;
+}
+
+.dropdown__list::before {
+    content: "";
+    height: 2.5rem;
+}
+
+.dropdown:hover .dropdown__list {
+    display: block;
+}
+
+
+.dropdown__item {
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+    transition: backgound-color 0.2s linear;
+    padding: 10px;
+}
+
+    .dropdown__item:first-child {
+        border-radius: 4px 4px 0 0;
+        position: relative;
+    }
+
+
+        .dropdown__item:first-child:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3rem;
+            transform: translateY(-100%);
+            transition: border-color 0.2s linear;
+        }
+
+
+        .dropdown__item:first-child:hover:before {
+            border-bottom-color: red;
+        }
+
+
+    .dropdown__item:last-child {
+        border-radius: 4px 4px 0 0;
+    }
+
+    .dropdown__item:hover {
+        background-color: #ccc;
+    }
+
+.right-header {
+    padding-right: 100px;
+}

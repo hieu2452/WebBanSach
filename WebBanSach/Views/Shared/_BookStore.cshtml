@@ -20,7 +20,8 @@
 <body>
     <div id="main">
         <!-- Header -->
-        @Html.Partial("_PartielHeader")
+        @*@Html.Partial("_PartielHeader")*@
+        @await Component.InvokeAsync("Header")
         <!-- End Header -->
         <!-- Slider -->
         @RenderBody()         

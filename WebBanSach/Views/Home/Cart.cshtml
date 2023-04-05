@@ -65,7 +65,7 @@
                             @(Model[i].DonGia * Model[i].SoLuong)
                         </div>
                         <div class="product-item col-md-2">
-                            <a asp-action="RemoveFromCart" asp-controller="Book" asp-route-masach="@Model[i].MaSach" class="btn">Xóa</a>
+                            <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-masach="@Model[i].MaSach" class="btn">Xóa</a>
                         </div>
                     </div>
                 }

@@ -94,6 +94,9 @@ namespace WebBanSach.Controllers
             string userif = JsonSerializer.Serialize(user);
             HttpContext.Session.SetString("UserInfo", userif);
 
+            ViewBag.user = HttpContext.Session.GetString("UserInfo");
+
+
             if (user.RoleId == "Admin")
             {
                 /*HttpContext.Session.SetString("UserName", user.UserN.ToString());
@@ -147,6 +150,12 @@ namespace WebBanSach.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Login", "Account");
+        }
+
+        [System.Web.Mvc.ChildActionOnly]
+        public IActionResult PartielHeader()
+        {
+            return PartialView("_PartielHeader");
         }
     }
 }

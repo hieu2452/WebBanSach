@@ -1,8 +1,8 @@
 ﻿@{
     Layout = "_BookStore";
 }
-@model List<TSach>
-
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<TSach>
 @TempData["test"]
 
 
@@ -49,7 +49,7 @@
                 </a>
             </div>
             <div class="price">
-                <span class="sale-price">52.200đ<span>58.000đ</span></span>
+                <span class="sale-price">@item.DonGia<span>58.000đ</span></span>
                 <a asp-controller="Home" asp-action="BookDetails"
                asp-route-masach="@item.MaSach">
                     <i class='bx bx-shopping-bag'></i>
@@ -60,6 +60,10 @@
     </div>
 
     }
+        </div>
+
+        <div class="row">
+            @Html.PagedListPager(Model, page=>Url.Action("Index", new{page=page}))
         </div>
     </div>
 </div>

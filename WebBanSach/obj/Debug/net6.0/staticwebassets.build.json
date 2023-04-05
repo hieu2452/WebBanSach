@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mUv04LC9QOo1jqvL1tiGsWmDfGp7Bzdb4ArG40iv6Ls=",
+  "Hash": "scbuVySJShGW2A4SnbaMxhEgWM3vHa3gF2m03k405Dg=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\books\\cover\\Screenshot 2023-01-29 003614_638157356171618313.png"
+    },
+    {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\Screenshot 2023-01-29 003614_638162899972316649.png",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "books/cover/Screenshot 2023-01-29 003614_638162899972316649.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\books\\cover\\Screenshot 2023-01-29 003614_638162899972316649.png"
     },
     {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\user_638157316133895483.jpg",

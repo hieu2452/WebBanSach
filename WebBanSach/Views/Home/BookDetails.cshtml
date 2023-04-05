@@ -41,7 +41,7 @@
             <div class="col-sm-6">
                 <div class="description-product">
                     <h1>@Model.TenSach</h1>
-                   <form method="post" enctype="multipart/form-data" asp-action="AddToCart" asp-controller="Book">
+                   <form method="post" enctype="multipart/form-data" asp-action="AddToCart" asp-controller="Cart">
                     <input asp-for="MaSach" type="hidden" />
                     <div class="product-detail">
                         <p>@Model.MaSach</p>

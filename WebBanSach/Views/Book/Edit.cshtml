@@ -53,12 +53,12 @@
 
     <div class="form-group">
         <label asp-for="AnhFile" class="control-label"></label>
-        <input asp-for="AnhFile" type="file" class="form-control-file"/>
+        <input asp-for="AnhFile" type="file" accept="image/*" class="form-control-file"/>
         <span asp-validation-for="AnhFile" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <img src="@Url.Content("../books/cover"+Model.Anh)" alt="@Model.TenSach" class="img-fluid" />
+        <img src="@Url.Content("../books/cover/"+Model.Anh)" alt="@Model.TenSach" class="img-fluid" />
     </div>
 
 

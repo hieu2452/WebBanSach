@@ -1,0 +1,47 @@
+﻿
+@using WebBanSach.Models.Datas;
+@model List<CartItem>
+
+@*@if(Model.Count == 0){
+    <div class="header_cart">
+    <div class="header_cart-warp">
+        <i class='bx bxs-shopping-bag cart-header'></i>
+        <span class="badge">0</span>
+        <div class="header_cart_list no_cart">
+            <img src="/assets/images/empty_cart.png" alt="" class="header_cart-no-cart-img">
+            <p class="header_cart_list-no_cart_msg">
+                Chưa có sản phẩm
+            </p>
+        </div>
+    </div>
+</div>
+}else{*@
+    <div class="header_cart">
+        <div class="header_cart-warp">
+            <i class='bx bxs-shopping-bag cart-header'></i>
+            <span class="badge">0</span>
+            <div class="header_cart_list no_cart">
+                @foreach(var item in Model){
+                    <div class="product-item col-md-2">
+                        <img src="@Url.Content("../books/cover/"+item.Anh)" alt="">
+                    </div>
+                    <div class="product-item col-md-2">
+                        @item.TenSach
+                    </div>
+                    <div class="product-item col-md-2">
+                        @item.DonGia
+                    </div>
+                    <div class="product-item col-md-2">
+                        @item.SoLuong
+                    </div>
+                    <div class="product-item col-md-2">
+                        @(item.DonGia * item.SoLuong)
+                    </div>
+                    <div class="product-item col-md-2">
+                        <a asp-action="RemoveFromCart" asp-controller="Cart" asp-route-masach="item.MaSach" class="btn">Xóa</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+@*}*@
