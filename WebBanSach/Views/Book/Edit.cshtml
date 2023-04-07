@@ -39,6 +39,16 @@
     </div>
 
     <div class="form-group">
+        <input asp-for="GiamGia" type="hidden" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GiamGiaInput" class="control-label"></label>
+        <input asp-for="GiamGiaInput" class="form-control" />
+        <span asp-validation-for="GiamGiaInput" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
         <label asp-for="SoLuong" class="control-label"></label>
         <input asp-for="SoLuong" class="form-control" />
         <span asp-validation-for="SoLuong" class="text-danger"></span>
@@ -64,10 +74,10 @@
 
 
     <div class="form-group">
-        <label asp-for="Anh" class="control-label"></label>
         <input id="anh-input" type="hidden"  asp-for="Anh" class="form-control"/>
-        <span asp-validation-for="Anh" class="text-danger"></span>
     </div
+
+
 
 @*    <div class="form-group">
         <label asp-for="Anh" class="control-label"></label>

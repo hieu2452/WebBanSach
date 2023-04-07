@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/HoaDon/HoaDonMuaHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9hRG9uXEhvYURvbk11YUhhbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -41,10 +45,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJ0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/HoaDonMuaHang.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb2FEb25NdWFIYW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Home/Index.cshtml]
@@ -69,6 +69,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/Components/NhaXuatBan/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmhhWHVhdEJhblxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/Components/TheLoaiMenu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGhlTG9haU1lbnVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/soica/OneDrive/BTL WebBanSach/WebBanSach/WebBanSach/Views/Shared/Error.cshtml]

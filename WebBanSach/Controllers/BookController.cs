@@ -115,12 +115,12 @@ namespace WebBanSach.Controllers
       [HttpPost]
         public async Task<IActionResult> Edit(TSach book)
         {
-/*            if (ModelState.IsValid)
-            {
+            /*            if (ModelState.IsValid)
+                        {
 
-                await _bookRepository.UpdateBook(book);
-                return RedirectToAction("LoadBook", "Home");
-            }*/
+                            await _bookRepository.UpdateBook(book);
+                            return RedirectToAction("LoadBook", "Home");
+                        }*/
 
             if (ModelState.IsValid)
             {
@@ -131,15 +131,32 @@ namespace WebBanSach.Controllers
                     return NotFound();
                 }
 
-                oldBook.TenSach = book.TenSach;
-                oldBook.TacGia = book.TacGia;
-                oldBook.Mota = book.Mota;
-                oldBook.DonGia = book.DonGia;
-                oldBook.SoLuong = book.SoLuong;
-                oldBook.MaTl = book.MaTl;
-                oldBook.MaNg = book.MaNg;
-                oldBook.MaNxb = book.MaNxb;
-                oldBook.Anh = await UploadImage(book.AnhFile);
+                if (oldBook.AnhFile != null)
+                {
+                    oldBook.TenSach = book.TenSach;
+                    oldBook.TacGia = book.TacGia;
+                    oldBook.Mota = book.Mota;
+                    oldBook.DonGia = book.DonGia;
+                    oldBook.SoLuong = book.SoLuong;
+                    oldBook.MaTl = book.MaTl;
+                    oldBook.GiamGia = book.GiamGiaInput;
+                    oldBook.MaNg = book.MaNg;
+                    oldBook.MaNxb = book.MaNxb;
+                    oldBook.Anh = await UploadImage(book.AnhFile);
+                }
+                else {
+                    oldBook.TenSach = book.TenSach;
+                    oldBook.TacGia = book.TacGia;
+                    oldBook.Mota = book.Mota;
+                    oldBook.DonGia = book.DonGia;
+                    oldBook.SoLuong = book.SoLuong;
+                    oldBook.MaTl = book.MaTl;
+                    oldBook.GiamGia = book.GiamGiaInput;
+                    oldBook.MaNg = book.MaNg;
+                    oldBook.MaNxb = book.MaNxb;
+                }
+
+
 
                 await _context.SaveChangesAsync();
                 return RedirectToAction("LoadBook", "Home");
@@ -159,7 +176,7 @@ namespace WebBanSach.Controllers
             {
                 TempData["message"] = "";
                 var rs = await _bookRepository.DeleteBook(masach);
-                if (rs)
+                if (!rs)
                 {
                     TempData["message"] = "Khong xoa dc san pham";
                     return RedirectToAction("LoadBook", "Home");

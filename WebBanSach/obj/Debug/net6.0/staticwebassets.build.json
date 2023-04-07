@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "scbuVySJShGW2A4SnbaMxhEgWM3vHa3gF2m03k405Dg=",
+  "Hash": "yKzfSsu2puTH8S5rqAbw0XFh7uN35lCTfOCjNrN76kQ=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\books\\cover\\episto_638159111331474734.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\episto_638163382622552836.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "books/cover/episto_638163382622552836.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\books\\cover\\episto_638163382622552836.jpg"
     },
     {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\linkhinh_638157302415740057.jpg",

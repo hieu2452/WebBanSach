@@ -42,6 +42,7 @@ namespace WebBanSach.Repository
                 MaTl = model.MaTl,
                 MaNxb = model.MaNxb,
                 Anh = model.Anh,
+                GiamGia = model.GiamGia,
                 SoLuong = model.SoLuong,
                 InActive = true,
             };
@@ -63,7 +64,6 @@ namespace WebBanSach.Repository
             _context.TSaches.RemoveRange(book);
             await _context.SaveChangesAsync();
             return true;
-
         }
 
 

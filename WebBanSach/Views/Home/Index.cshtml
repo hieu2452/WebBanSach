@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div id="main-product" class="row">
             
     @foreach(var item in Model){
     <div class="sale-item col-md-3 col-xs-12">
@@ -49,11 +49,19 @@
                 </a>
             </div>
             <div class="price">
-                <span class="sale-price">@item.DonGia<span>58.000đ</span></span>
-                <a asp-controller="Home" asp-action="BookDetails"
-               asp-route-masach="@item.MaSach">
-                    <i class='bx bx-shopping-bag'></i>
-                </a>
+                @if (item.GiamGia == null){
+                                <span class="sale-price">@item.DonGia</span>
+                                <a asp-controller="Home" asp-action="BookDetails"
+                           asp-route-masach="@item.MaSach">
+                                    <i class='bx bx-shopping-bag'></i>
+                                </a>
+                }else{
+                                <span class="sale-price">@(item.DonGia* ((100-item.GiamGia)/100))<span>@item.DonGia</span></span>
+                                <a asp-controller="Home" asp-action="BookDetails"
+                           asp-route-masach="@item.MaSach">
+                                    <i class='bx bx-shopping-bag'></i>
+                                </a>
+                }
 
             </div>
         </div>

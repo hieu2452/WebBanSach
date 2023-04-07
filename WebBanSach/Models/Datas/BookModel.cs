@@ -19,6 +19,9 @@ namespace WebBanSach.Models.Datas
         public int? SoLuong { get; set; }
         public double? DonGia { get; set; }
 
+
+        [RegularExpression(@"^(?:100|[1-9][0-9]|[1-9])$", ErrorMessage = "The value must be between 1 and 100.")]
+        public double? GiamGia { get; set; }
         public int MaTl { get; set; }
         public string? TheLoai { get; set; }
 

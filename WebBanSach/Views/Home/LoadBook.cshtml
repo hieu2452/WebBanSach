@@ -3,13 +3,19 @@
 *@
 @{
 }
-@model List<TSach>
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<TSach>
 @Html.ActionLink("Create New Book", "AddNewBook", "Book", null, new { @class = "btn btn-primary" })
 
 <h1>DanhMucSanPham</h1>
 
 
-@TempData["message"]
+@if (TempData["message"] != null)
+    {
+        <div id="email-exists-message" class="alert alert-danger">
+            @TempData["message"]
+        </div>
+    }
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -101,6 +107,9 @@
         }
     </tbody>
 </table>
+<div class="row">
+    @Html.PagedListPager(Model, page=>Url.Action("Index", new{page=page}))
+</div>
 
 
 @section Scripts {
@@ -121,3 +130,13 @@
         });
     </script>
 }
+
+
+<script>
+    const emailused = document.querySelector('#email-exists-message');
+    
+    setTimeout(() => {
+        emailused.remove();
+    }, 3000);
+
+</script>

@@ -9,23 +9,7 @@
                 Trang chủ
             </li>
             <li>
-                Danh mục
-                <i class='bx bx-chevron-down'></i>
-                <ul class="menu">
-                    <div class="list-menu">
-                        <div class="item-list-menu">
-                            <h3><a href="">Sách</a></h3>
-                            <ul>
-                                <li><a href="#">Sách thiếu nhi</a></li>
-                                <li><a href="#">Sách văn học</a></li>
-                                <li><a href="#">Sách trinh thám</a></li>
-                                <li><a href="#">Sách có chữ kí</a></li>
-                                <li><a href="#">Văn phòng phẩm</a></li>
-                                <li><a href="#">Sách ngoại văn</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </ul>
+                @await Component.InvokeAsync("TheLoaiMenu")
             </li>
             <li>
                 Blog
@@ -56,8 +40,8 @@
                 <div class="header_cart">
                     <div class="header_cart-warp">
                         <i class='bx bxs-shopping-bag cart-header'></i>
-                        <span class="badge">0</span>
-                        <div class="header_cart_list no_cart">
+                        <span class="badge" id="cart-badge">0</span>
+                        <div class="header_cart_list no_cart" id="cart-item-list">
                             <img src="/assets/images/empty_cart.png" alt="" class="header_cart-no-cart-img">
                             <p class="header_cart_list-no_cart_msg">
                                 Chưa có sản phẩm
@@ -90,7 +74,7 @@
                 {
                     <ul class="dropdown__list">
                         <li class="dropdown__item">
-                            <a href="#" class="dropdown__text">Đăng nhập</a>
+                            <a asp-controller="account" asp-action="login" class="dropdown__text">Đăng nhập</a>
                         </li>
                     </ul>
                 }
@@ -99,3 +83,46 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    // get the cart item list and badge elements by ID
+const cartItemList = document.getElementById("cart-item-list");
+const cartBadge = document.getElementById("cart-badge");
+
+// function to update the cart item count and list
+function updateCartItems() {
+    // get the cart items from session storage
+        const cartJson = sessionStorage.getItem("Cart");
+
+    const cartItems = JSON.parse(cartJson) || [];
+        console.log(cartItems);
+    // update the badge with the cart item count
+    cartBadge.innerText = cartItems.length;
+
+    // create HTML for each cart item and add it to the cart item list
+    const itemHtml = cartItems.map(item => `
+        <div class="header_cart_list-item">
+            <img src="${item.Anh}" alt="" class="header_cart_list-item-img">
+            <div class="header_cart_list-item-info">
+                <p class="header_cart_list-item-info-title">${item.TenSach}</p>
+                <p class="header_cart_list-item-info-price">${item.DonGia}đ x ${item.SoLuong}</p>
+            </div>
+        </div>
+    `).join("");
+
+    cartItemList.innerHTML = itemHtml;
+
+    // if the cart is empty, show a message
+    if (cartItems.length === 0) {
+        cartItemList.classList.add("no_cart");
+    } else {
+        cartItemList.classList.remove("no_cart");
+    }
+}
+
+// call the updateCartItems function when the page loads and whenever an item is added to the cart
+window.addEventListener("load", updateCartItems);
+window.addEventListener("storage", updateCartItems);
+
+</script>
