@@ -205,5 +205,18 @@ namespace WebBanSach.Controllers
             return RedirectToAction("BookDetails","Home", new { masach = book.MaSach });
         }
 
+        [HttpGet]
+        public async Task<IActionResult> SearchBookByName(string tensach)
+        {
+            var books = await _bookRepository.GetBookLikeName(tensach);
+
+            if (books == null )
+            {
+                return NotFound();
+            }
+
+            return View(books);
+        }
+
     }
 }

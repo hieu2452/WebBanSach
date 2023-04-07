@@ -13,5 +13,7 @@ namespace WebBanSach.Repository.Interface
         Task UpdateBook(TSach book);
 
         Task<Boolean> DeleteBook(int id);
+
+        Task<List<TSach>> GetBookLikeName(string tensach);
     }
 }
