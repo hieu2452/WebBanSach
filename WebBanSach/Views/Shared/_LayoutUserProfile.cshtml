@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="main">
-        @Html.Partial("_PartielHeader")
+        @await Component.InvokeAsync("Header")
 
         @RenderBody()
 

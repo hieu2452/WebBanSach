@@ -29,10 +29,23 @@
     </div>
 
     <div class="right-header">
-        <div class="search">
-            <i class='bx bx-search'></i>
-            <input type="text" placeholder="Tìm kiếm sản phẩm?">
+        <div class="menu-btn">
+            <i class='bx bx-menu'></i>
         </div>
+       
+            <form method="get" action="@Url.Action("SearchBookByName", "Book")">
+                <div class="search">
+        @*            <i class='bx bx-search'></i>*@
+                    <button type="submit" class="bx bx-search"></button>
+                    <input type="text" name="tensach" class="form-control" placeholder="Search for books...">
+                    
+                </div>
+
+            </form>
+        
+      
+
+
         <div class="actions">
             <a href="./cart.html">
                 <div class="header_cart">

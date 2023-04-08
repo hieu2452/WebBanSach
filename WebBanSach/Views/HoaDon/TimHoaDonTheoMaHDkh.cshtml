@@ -1,0 +1,61 @@
+﻿@using WebBanSach.Models.Datas;
+@{
+    ViewData["Title"] = "TimHoaDonTheoMaHDkh";
+    Layout = "~/Views/Shared/_LayoutUserProfile.cshtml";
+}
+
+@model IEnumerable<HoaDonModel>
+
+<div id="content-profile">
+    <h2>Thông tin hóa đơn</h2>
+    <div class="row profile">
+        <div class="right-profile col-md-8">
+            @foreach (var bill in Model)
+            {
+                <div class="hoadon">
+                    <div class="thongtinkhachhang">
+                        <p class="maHD">
+                            Mã hóa đơn: @bill.MaHD
+                        </p>
+                        <p class="ngayTao">
+                            Ngày tạo: @bill.ngaytao
+                        </p>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <td>Tên sách</td>
+                            <td>Đơn giá</td>
+                            <td>Số lượng</td>
+                            <td>Tổng tiền</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Thêm sản phẩm thì copy đoạn này -->
+                        @foreach (var book in bill.bookDetail)
+                        {
+                            <tr>
+                                <td>@book.TenSach</td>
+                                <td>@book.DonGia</td>
+                                <td>@book.SoLuong</td>
+                                <td>@((book.DonGia * book.SoLuong).ToString("#,##0")) đ</td>
+                            </tr>
+                        }
+
+                        <!-- Thêm sản phẩm thì copy đoạn này vào dòng ngay dưới ĐÂY -->
+                        <!--  -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>@bill.tongTien.ToString("#,##0") đ</td>
+                    <!-- Tổng hóa đơn -->
+                    </tbody>
+                </table>
+            }
+
+        </div>
+    </div>
+    <!-- Thêm 1 hóa đơn nữa thì copy đoạn class="row profile" rồi ném xuống dòng dưới ĐÂY -->
+</div>
+

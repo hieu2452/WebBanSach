@@ -121,7 +121,6 @@ namespace WebBanSach.Controllers
                             await _bookRepository.UpdateBook(book);
                             return RedirectToAction("LoadBook", "Home");
                         }*/
-
             if (ModelState.IsValid)
             {
                 var oldBook = _context.TSaches.Find(book.MaSach);
@@ -131,7 +130,7 @@ namespace WebBanSach.Controllers
                     return NotFound();
                 }
 
-                if (oldBook.AnhFile != null)
+                if (book.AnhFile != null)
                 {
                     oldBook.TenSach = book.TenSach;
                     oldBook.TacGia = book.TacGia;
@@ -159,7 +158,7 @@ namespace WebBanSach.Controllers
 
 
                 await _context.SaveChangesAsync();
-                return RedirectToAction("LoadBook", "Home");
+                return RedirectToAction("Admin", "Home");
                }
                 // If the model state is not valid, redisplay the form with validation errors
 
@@ -179,15 +178,28 @@ namespace WebBanSach.Controllers
                 if (!rs)
                 {
                     TempData["message"] = "Khong xoa dc san pham";
-                    return RedirectToAction("LoadBook", "Home");
+                    return RedirectToAction("Admin", "Home");
 
                 }
-                return RedirectToAction("LoadBook", "Home");
+                return RedirectToAction("Admin", "Home");
             }
-            return RedirectToAction("LoadBook", "Home");
+            return RedirectToAction("Admin", "Home");
         }
 
 
+
+        [HttpGet]
+        public async Task<IActionResult> SearchBookByName(string tensach)
+        {
+            var books = await _bookRepository.GetBookLikeName(tensach);
+
+            if (books == null )
+            {
+                return NotFound();
+            }
+
+            return View(books);
+        }
 
     }
 }

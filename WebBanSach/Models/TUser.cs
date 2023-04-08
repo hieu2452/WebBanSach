@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebBanSach.Models;
 
@@ -20,6 +22,11 @@ public partial class TUser
     public string? RoleId { get; set; }
 
     public string? AnhDaiDien { get; set; }
+
+
+    [NotMapped]
+    [Display(Name = "Tải ảnh đại diện")]
+    public IFormFile AnhFile { get; set; }
 
     public virtual TUserRole? Role { get; set; }
 

@@ -10,13 +10,14 @@
     <div class="row profile">
         <div class="left-profile col-md-3">
             <div class="sidebar-profile">
-
+                <div class="profile-image-container">
                 @if(Model.AnhDaiDien == null)
                 {
                     <img src="../users/profilepictures/profile.jpg" alt="User">
                 }else{
-                    <img src="@Url.Content("../users/profilepictures/"+Model.AnhDaiDien)" alt="User">
+                    <img src="../users/profilepictures/@Model.AnhDaiDien" alt="User">
                 }
+                </div>
                 <h3>@Model.UserN</h3>
                 <p>@Model.Email</p>
             </div>
@@ -44,7 +45,7 @@
                 </tbody>
             </table>
 
-            <a href="./edit-profile.html" class="btn-fix-profile">Sửa</a>
+            <a asp-controller="User" asp-action="SuaThongTin" asp-route-makh="@Model.Id">Sửa</a>
         </div>
     </div>
 

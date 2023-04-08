@@ -31,10 +31,15 @@
     </div>
 
     <div class="right-header">
-        <div class="search">
+@*        <div class="search">
             <i class='bx bx-search'></i>
-            <input type="text" placeholder="Tìm kiếm sản phẩm?">
-        </div>
+        </div>*@
+        <form method="get" class="search" action="@Url.Action("SearchBookByName", "Book")">
+                @*            <i class='bx bx-search'></i>*@
+                <button type="submit" class="bx bx-search"></button>
+                <input type="text" name="tensach" class="form-control" placeholder="Search for books...">
+
+        </form>
         <div class="actions">
             <a asp-controller="Home" asp-action="Cart">
                 <div class="header_cart">
@@ -63,7 +68,7 @@
                             <a asp-controller="user" asp-action="profile" class="dropdown__text">Thông tin tài khoản</a>
                         </li>
                         <li class="dropdown__item">
-                            <a href="#" class="dropdown__text">Đơn mua</a>
+                            <a asp-controller="HoaDon" asp-action="HoaDonMuaHang" class="dropdown__text">Đơn mua</a>
                         </li>
                         <li class="dropdown__item">
                             <a asp-controller="account" asp-action="logout" class="dropdown__text">Đăng xuất</a>

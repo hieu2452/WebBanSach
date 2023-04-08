@@ -1,0 +1,122 @@
+﻿@using WebBanSach.Models.Datas;
+@{
+    ViewData["Title"] = "HoaDonMuaHangAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<HoaDonModel>
+
+<style>
+    .hoadon {
+        position: relative;
+    }
+
+        .hoadon .right-profile {
+            position: absolute;
+            left: -15px;
+            top: 90px;
+        }
+
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .form-control{
+        width: 300px;
+        margin-bottom30px;
+    }
+
+    #email-exists-message{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+</style>
+            @{
+                double tongtien = 0;
+            }
+<div id="content-profile">
+    <h2>Thông tin hóa đơn</h2>
+
+    <form method="get" class="search" action="@Url.Action("TimHoaDonTheoMaHD", "HoaDon")">
+        <button type="submit" class="bx bx-search"></button>
+        <input type="text" name="mahd" class="form-control" placeholder="Tìm hóa đơn" pattern="\d+" title="Nhập đúng mã hóa đơn">
+    </form>
+
+    @if (TempData["msg"] != null)
+{
+    <div id="email-exists-message" class="alert alert-danger">
+        @TempData["msg"]
+    </div>
+}
+
+    <div class="row profile">
+        <div class="right-profile col-md-8">
+
+            @foreach (var bill in Model)
+            {
+                <div class="hoadon">
+                    <div class="thongtinkhachhang">
+                        <p class="maHD">
+                            Mã hóa đơn: @bill.MaHD
+                        </p>
+                        <p class="ngayTao">
+                            Ngày tạo: @bill.ngaytao
+                        </p
+                        <p class="ngayTao">
+                            Họ tên: @bill.UserN
+                        </p>
+                        <p class="ngayTao">
+                            Số điện thoại: @bill.SDT
+                        </p>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <td>Tên sách</td>
+                            <td>Đơn giá</td>
+                            <td>Số lượng</td>
+                            <td>Tổng tiền</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Thêm sản phẩm thì copy đoạn này -->
+                        @foreach(var book in bill.bookDetail ){
+                            <tr>
+                                <td>@book.TenSach</td>
+                                <td>@book.DonGia</td>
+                                <td>@book.SoLuong</td>
+                                <td>@((book.DonGia  * book.SoLuong).ToString("#,##0"))</td>
+                            </tr>
+                        }
+
+                        <!-- Thêm sản phẩm thì copy đoạn này vào dòng ngay dưới ĐÂY -->
+                        <!--  -->
+                    <td></td>
+                    <td></td>
+                    <td>Thành tiền:</td>
+                    <td>@bill.tongTien.ToString("#,##0")</td>
+                    <!-- Tổng hóa đơn -->
+                    </tbody>
+                </table>
+            }
+            
+        </div>
+    </div>
+    <!-- Thêm 1 hóa đơn nữa thì copy đoạn class="row profile" rồi ném xuống dòng dưới ĐÂY -->
+    <div class="row">
+        @Html.PagedListPager(Model, page=>Url.Action("HoaDonMuaHangAdmin", new{page=page}))
+    </div>
+</div>
+
+    <script>
+        const emailused = document.querySelector('#email-exists-message');
+
+        setTimeout(() => {
+            emailused.remove();
+        }, 3000);
+
+    </script>

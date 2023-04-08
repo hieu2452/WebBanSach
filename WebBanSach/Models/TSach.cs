@@ -32,7 +32,7 @@ public partial class TSach
 
     [NotMapped]
     [Display(Name = "Tải ảnh lên")]
-    public IFormFile? AnhFile { get; set; }
+    public IFormFile AnhFile { get; set; }
 
     public bool? InActive { get; set; }
 

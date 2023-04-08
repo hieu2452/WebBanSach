@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "SuaThongTin";
+    Layout = "~/Views/Shared/_LayoutUserProfile.cshtml";
+}
+
+@model TUser
+
+<div id="content-profile">
+            <div class="row profile">
+                <div class="left-profile col-md-3">
+                    <div class="sidebar-profile">
+                        @if(Model.AnhDaiDien == null)
+                {
+                    <img src="../users/profilepictures/profile.jpg" alt="User">
+                }else{
+                    <img src="@Url.Content("../users/profilepictures/"+Model.AnhDaiDien)" alt="User">
+                }
+                        <h3>@Model.UserN</h3>
+                        <p>@Model.Email</p>
+                    </div>
+                </div>
+
+        <form asp-controller="User" asp-action="SuaThongTin" method="post" enctype="multipart/form-data" class="right-profile col-md-9">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td style="text-align: center; font-weight: 700; font-size: 18px;" colspan="2">Sửa thông tin trang cá nhân</td>
+                            </tr>
+
+                            <tr>
+                                <td>Họ tên</td>
+                                <td>@Model.UserN</td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ Email</td>
+                                <td>@Model.Email</td>
+                            </tr>
+                            <tr>
+                                <td>Họ tên</td>
+                            <td>
+                            <span asp-validation-for="UserN" class="text-danger"></span>
+                                    <input asp-for="UserN" style="width: 100%;"></td>
+                            </tr>
+                            @*<tr>
+                                <td>Ngày sinh</td>
+                        <td>
+                            <span asp-validation-for="Ngay" class="text-danger"></span>
+                            <input asp-for="UserN" style="width: 100%;">
+                        </td>
+                            </tr>*@
+                            <tr>
+                                <td>Số điện thoại</td>
+                        <td>
+                            <span asp-validation-for="Sdt" class="text-danger"></span>
+                            <input asp-for="Sdt" style="width: 100%;">
+                        </td>
+                            </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td>
+                            <span asp-validation-for="DiaChi" class="text-danger"></span>
+                            <input asp-for="DiaChi" style="width: 100%;">
+                        </td>
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="Email" type="hidden" />
+                        <input asp-for="PassW" type="hidden" />
+                        <input asp-for="RoleId" type="hidden" />
+                        <input asp-for="AnhDaiDien" type="hidden" />
+                    </tr>
+                    <tr>
+                        <td>Tải ảnh đại diện</td>
+                        <td>
+                            <span asp-validation-for="AnhFile" class="text-danger"></span>
+                            <input asp-for="AnhFile" type="file" accept="image/*" style="width: 100%;">
+                        </td>
+                    </tr>
+                        
+                        </tbody>
+                    </table>
+
+                    <button type="submit" class="btn-fix-profile">Xác nhận</button>
+                </form>
+            </div>
+
+        </div>
+

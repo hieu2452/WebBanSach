@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Net;
 using WebBanSach.Models;
 using WebBanSach.Models.Datas;
 using WebBanSach.Repository.Interface;
@@ -28,6 +29,11 @@ namespace WebBanSach.Repository
 
             return await _context.TSaches.FirstOrDefaultAsync(b => b.MaSach == bookid);
 
+        }
+
+        async Task<List<TSach>> IBookRepository.GetBookLikeName(string tensach)
+        {
+            return await _context.TSaches.Where(c => c.TenSach.Contains(tensach)).ToListAsync();
         }
 
         async Task<int> IBookRepository.AddNewBook(BookModel model)
@@ -72,5 +78,10 @@ namespace WebBanSach.Repository
             _context.Entry(book).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
+
+
+
+
+
     }
 }

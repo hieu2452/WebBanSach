@@ -21,10 +21,15 @@ namespace WebBanSach.Controllers
             _bookRepository = bookRepository;
         }
 
+        [HttpGet]
         [Authorize(Policy = "AdminPolicy")]
-        public IActionResult Admin()
+        public async Task<IActionResult> Admin(int? page)
         {
-            return View();
+            int pageSize = 8;
+            int pageNumber = page == null || page <= 0 ? 1 : page.Value;
+            var lst = await _bookRepository.GetAllBooks();
+            PagedList<TSach> lstbooks = new PagedList<TSach>(lst, pageNumber, pageSize);
+            return View(lstbooks);
         }
 
         public async Task<IActionResult> Index(int? page)

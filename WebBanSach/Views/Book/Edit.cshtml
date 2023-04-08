@@ -3,6 +3,19 @@
 @inject WebBanSach.Repository.Interface.ILanguageRepository _languageRepo
 @model TSach
 
+@{
+
+    ViewData["Title"] = "Add new book";
+    Layout = "_LayoutAdmin";
+}
+<div class="container">
+    <div class="header-container">
+            <img src="../BookStoreRC/assets/img/logo.jpg" alt="" class="logo">
+            <h3 class="display-4">UPDATE BOOK</h3>
+        </div>
+    <hr width="100%"
+        color="red"
+        size="5px">
 <form asp-controller="Book" asp-action="Edit" method="post" enctype="multipart/form-data">
     <input asp-for="MaSach" type="hidden" />
     <div class="form-group">
@@ -14,18 +27,18 @@
         <label asp-for="TacGia" class="control-label"></label>
         <input asp-for="TacGia" class="form-control" />
         <span asp-validation-for="TacGia" class="text-danger"></span>
-    </div
+    </div>
 
     <div class="form-group">
         <label asp-for="MaTl" class="control-label"></label>
         <select asp-for="MaTl" asp-items="(_categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})" class="form-control"></select>
         <span asp-validation-for="MaTl" class="text-danger"></span>
-    </div
+    </div>
     <div class="form-group">
         <label asp-for="MaNg" class="control-label"></label>
         <select asp-for="MaNg" asp-items="(_languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})" class="form-control"></select>
         <span asp-validation-for="MaNg" class="text-danger"></span>
-    </div
+    </div>
     
     <div class="form-group">
         <label asp-for="MaNxb" class="control-label"></label>
@@ -75,7 +88,7 @@
 
     <div class="form-group">
         <input id="anh-input" type="hidden"  asp-for="Anh" class="form-control"/>
-    </div
+    </div>
 
 
 
@@ -95,4 +108,97 @@
 
     <button type="submit" class="btn btn-primary">Update</button>
 </form>
+
+@*<form asp-controller="Book" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input asp-for="MaSach" type="hidden" />
+        <div class="form-group">
+            <label asp-for="TenSach" class="control-label">Tên sách</label>
+            <input asp-for="TenSach" class="form-control" />
+            <span asp-validation-for="TenSach" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TacGia" class="control-label">Tác giả</label>
+            <input asp-for="TacGia" class="form-control" />
+            <span asp-validation-for="TacGia" class="text-danger"></span>
+        </div>
+    
+        <div class="form-group">
+            <label asp-for="MaTl" class="control-label">Thể loại</label>
+            <select asp-for="MaTl" asp-items="( _categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})" class="form-control">
+                <option value="">Please choose your category</option>
+            </select>
+            <span asp-validation-for="MaTl" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MaNg" class="control-label">Ngôn ngữ</label>
+            <select asp-for="MaNg" asp-items="( _languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})" class="form-control">
+                <option value="">Please choose your language</option>
+            </select>
+            <span asp-validation-for="MaNg" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label asp-for="MaNxb" class="control-label">Nhà xuất bản</label>
+            <select asp-for="MaNxb" asp-items="( _nhaxbRepo.GetNXBs()).Select(x=> new SelectListItem() { Text = x.TenNxb, Value = x.MaNxb.ToString()})" class="form-control">
+                <option value="">MaNxb choose your category</option>
+            </select>
+            <span asp-validation-for="MaNxb" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DonGia" class="control-label">Đơn giá</label>
+            <input asp-for="DonGia" class="form-control" />
+            <span asp-validation-for="DonGia" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+        <input asp-for="GiamGia" type="hidden" class="form-control" />
+    </div>
+    
+        <div class="form-group">
+            <label asp-for="SoLuong" class="control-label">Số lượng</label>
+            <input asp-for="SoLuong" class="form-control" />
+            <span asp-validation-for="SoLuong" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+        <label asp-for="GiamGiaInput" class="control-label"></label>
+        <input asp-for="GiamGiaInput" class="form-control" />
+        <span asp-validation-for="GiamGiaInput" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Mota" class="control-label">Mô tả</label>
+            <textarea asp-for="Mota" class="form-control"></textarea>
+            <span asp-validation-for="Mota" class="text-danger"></span>
+        </div>
+    
+    
+        <div class="form-group">
+            <label asp-for="AnhFile" class="control-label">Chọn ảnh bìa sách</label>
+            <input asp-for="AnhFile" type="file" class="form-control-file"/>
+            <span asp-validation-for="AnhFile" class="text-danger"></span>
+        </div>
+    
+        <div class="form-group">
+            <img src="@Url.Content("../books/cover"+Model.Anh)" alt="@Model.TenSach" class="img-fluid" />
+        </div>
+        
+        <div class="form-group">
+        <input id="anh-input" type="hidden"  asp-for="Anh" class="form-control"/>
+        </div>
+    
+    
+            
+        <div class="form-group">
+            <label asp-for="InActive" class="control-label"></label>
+            <input asp-for="InActive" class="form-control" />
+            <span asp-validation-for="InActive" class="text-danger"></span>
+        </div>
+    
+        
+        <div class="form-group pdt15">
+            <input type="submit" value="Update book" class="btn btn-primary btn-updatebook"/>
+        </div>
+    </form>*@
+</div>
 

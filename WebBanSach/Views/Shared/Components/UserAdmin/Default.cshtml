@@ -1,0 +1,26 @@
+﻿
+@using WebBanSach.Models.Datas;
+@model TUser
+
+<div class="sidebar_blog_1">
+    <div class="sidebar-header">
+        <div class="logo_section">
+            <a href="index.html"><img class="logo_icon img-responsive" src="../Admin/images/logo/logo1.jpg" alt="#" /></a>
+        </div>
+    </div>
+    <div class="sidebar_user_info">
+        <div class="icon_setting"></div>
+        <div class="user_profle_side">
+            @if(Model.AnhDaiDien != null){
+                <div class="user_img"><img class="img-responsive" src="@Url.Content("../users/profilepictures/"+Model.AnhDaiDien)" alt="#" /></div>
+            }
+            else{
+                <div class="user_img"><img class="img-responsive" src="../users/profilepictures/profile.jpg" alt="#" /></div>
+            }
+            <div class="user_info">
+                <h6>@Model.UserN</h6>
+                <p><span class="online_animation"></span> Online</p>
+            </div>
+        </div>
+    </div>
+</div>
