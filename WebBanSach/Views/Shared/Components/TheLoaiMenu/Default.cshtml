@@ -42,12 +42,17 @@
                     str += '</a>';
                     str += '<div class="info-item">';
                     str += '<div class="name-item">';
-                    str += '<a asp-controller="Home" asp-action="BookDetails" asp-route-masach="' + item.maSp + '">';
+                    str += '<a href="https://localhost:7038/Home/BookDetails?masach=' + item.maSp + '">';
                     str += item.tenSp;
                     str += '</a>';
                     str += '</div>';
-                    str += '<div class="price">';
-                    str += '<span class="sale-price">' + item.donGia + '<span>58.000đ</span></span>';
+                    str += '<div class="price">'; 
+                    if (item.giamGia != null){
+                        str += '<span class="sale-price">' + item.donGia * ((100 - item.giamGia) / 100) + '<span>'+ item.donGia +'</span></span>';
+                    }else{
+                        str += '<span class="sale-price">' + item.donGia + '</span>';
+                    }
+                    
                     str += '<a asp-controller="Home" asp-action="BookDetails" asp-route-masach="' + item.maSp + '">';
                     str += '<i class="bx bx-shopping-bag"></i>';
                     str += '</a>';

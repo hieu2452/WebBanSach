@@ -55,7 +55,6 @@
                         <span>(0 đánh giá)</span>
                     </div>
                     <div class="product-price">
-                        <span class="sale-price">@Model.DonGia</span>
                         @if (Model.GiamGia == null)
                         {
                             <span class="sale-price">@Model.DonGia</span>
@@ -66,7 +65,7 @@
                         }
                     </div>
                     <div class="quantity">
-                        <input asp-for="SoLuongMua" type="number" placeholder="Số lượng" value="1" max="@Model.SoLuong">
+                        <input asp-for="SoLuongMua" type="number" placeholder="Số lượng" value="1" max="@Model.SoLuong" min="1">
                     </div>
 
                     <div class="add-cart">

@@ -45,7 +45,15 @@
                 {
                     <div class="list-product-cart">
                         <div class="product-item col-md-2">
-                            <img src="@Url.Content("../books/cover/"+Model[i].Anh)" alt="">
+                            @if (Model[i].Anh != null)
+                            {
+                                <img src="@Url.Content("../books/cover/"+Model[i].Anh)" alt="Sale">
+                            }
+                            else
+                            {
+                                <img src="../BookStoreRC/assets/images/item1.jpg" alt="Sale">
+                            }
+                            @*<img src="@Url.Content("../books/cover/"+Model[i].Anh)" alt="">*@
                         </div>
                         <input asp-for="@Model[i].MaSach" type="hidden" name="cartItems[@i].MaSach" />
                         <input asp-for="@Model[i].TenSach" type="hidden" name="cartItems[@i].TenSach" />
@@ -59,7 +67,7 @@
                             @Model[i].DonGia
                         </div>
                         <div class="product-item col-md-2">
-                            <input asp-for="@Model[i].SoLuong" name="cartItems[@i].SoLuong">
+                            <input asp-for="@Model[i].SoLuong" name="cartItems[@i].SoLuong" min="1" max="cartItems[@i].SoLuong">
                         </div>
                         <div class="product-item col-md-2">
                             @(Model[i].DonGia * Model[i].SoLuong)
