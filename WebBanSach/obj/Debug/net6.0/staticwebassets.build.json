@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/nupZC2tWl0oTdiPnMj4/XHOEMAF7b+x2B9Ho0ZpPd8=",
+  "Hash": "9oX2CxFngGncyccR+nCdYrk/rmNGmt73Kqgy2/qGR4k=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -8039,6 +8039,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\users\\profilepictures\\download_638165628109322556.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\users\\profilepictures\\linkhinh_638165634040360338.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "users/profilepictures/linkhinh_638165634040360338.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users\\profilepictures\\linkhinh_638165634040360338.jpg"
     },
     {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\users\\profilepictures\\profile.jpg",
