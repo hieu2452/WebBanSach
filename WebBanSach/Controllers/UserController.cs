@@ -130,7 +130,7 @@ namespace WebBanSach.Controllers
             return allowedExtensions.Contains(fileExtension.ToLower());
         }
 
-
+        [Authorize(Policy = "AdminPolicy")]
         [HttpGet]
         public async Task<IActionResult> QuanLiUser()
         {
@@ -139,12 +139,14 @@ namespace WebBanSach.Controllers
             return View(users);
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [HttpGet]
         public IActionResult EditUser(int userid)
         {
             var user = _user.GetUserById(userid);
             return View(user);
         }
+
 
         [HttpPost]
         public IActionResult EditUser(TUser user)
@@ -153,7 +155,7 @@ namespace WebBanSach.Controllers
             {
                 _context.Entry(user).State = EntityState.Modified;
                 _context.SaveChanges();
-                return RedirectToAction("Admin", "Home");
+                return RedirectToAction("quanliuser", "User");
             }
             return View(user);
         }
