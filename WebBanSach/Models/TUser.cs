@@ -28,7 +28,6 @@ public partial class TUser
 
     [NotMapped]
     [Display(Name = "Tải ảnh đại diện")]
-    [BindNever]
     public IFormFile? AnhFile { get; set; }
 
     public virtual TUserRole? Role { get; set; }

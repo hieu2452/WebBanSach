@@ -20,9 +20,10 @@ namespace WebBanSach.Controllers
             _bookRepository = bookRepository;
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         [Authorize]
         [Authorize(Policy = "UserPolicy")]
-        [HttpPost]
         public async Task<IActionResult> ThemHoaDon([FromForm] List<CartItem> cartItems)
         {
 
@@ -70,7 +71,7 @@ namespace WebBanSach.Controllers
                 return NotFound();
             }
 
-
+            HttpContext.Session.Remove("Cart");
 
             //return RedirectToAction("BookDetails", "Home", new { masach = book.MaSach });
             return RedirectToAction("Index", "Home");

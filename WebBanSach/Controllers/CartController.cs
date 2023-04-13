@@ -16,9 +16,10 @@ namespace WebBanSach.Controllers
         }
 
 
+        
+        [HttpPost]
         [Authorize]
         [Authorize(Policy = "UserPolicy")]
-        [HttpPost]
         public async Task<IActionResult> AddToCart(TSach sach)
         {
             var book = await _bookRepository.GetById(sach.MaSach);

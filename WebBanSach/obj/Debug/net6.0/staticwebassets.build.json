@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E3touw/mnvmawHm1T7o2vKpnsz2Jeb22eQdSlTaBQ5E=",
+  "Hash": "AdBCtI4ONKCCNyb4DxH6BTxmzY/dJmdcmeLga9TtcrQ=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -6392,6 +6392,23 @@
       "OriginalItemSpec": "wwwroot\\books\\cover\\dooki2_638157680721466699.jpg"
     },
     {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\dooki2_638170318220615023.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "books/cover/dooki2_638170318220615023.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\books\\cover\\dooki2_638170318220615023.jpg"
+    },
+    {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\books\\cover\\episto_638157314123705283.jpg",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
@@ -8039,6 +8056,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\users\\profilepictures\\dooki1_638166806186874476.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\users\\profilepictures\\dooki1_638170320729228238.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "users/profilepictures/dooki1_638170320729228238.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\users\\profilepictures\\dooki1_638170320729228238.jpg"
     },
     {
       "Identity": "C:\\Users\\soica\\OneDrive\\BTL WebBanSach\\WebBanSach\\WebBanSach\\wwwroot\\users\\profilepictures\\download_638165625666134319.jpg",
