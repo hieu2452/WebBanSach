@@ -18,7 +18,7 @@
             size="5px">
         @if (ViewBag.IsSuccess == true)
         {
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div id="success" class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>Congratulations</strong> You have added new book successfully. <br />
                 Click <a asp-controller="Book" asp-action="GetBook" asp-route-id="@ViewBag.BookId">here</a> to view the details
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -138,7 +138,7 @@
 
             <div class="form-group">
                 <label asp-for="TenSach" class="control-label">Tên sách</label>
-                <input asp-for="TenSach" class="form-control" />
+            <input asp-for="TenSach" class="form-control" placeholder="Tên sách" />
                 <span asp-validation-for="TenSach" class="text-danger"></span>
             </div>
 
@@ -184,3 +184,11 @@
 
     </div>
 
+<script>
+    const emailused = document.querySelector('#success');
+
+    setTimeout(() => {
+        emailused.remove();
+    }, 3000);
+
+</script>

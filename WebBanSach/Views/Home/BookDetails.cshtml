@@ -57,11 +57,13 @@
                     <div class="product-price">
                         @if (Model.GiamGia == null)
                         {
-                            <span class="sale-price">@Model.DonGia</span>
+                            <span class="sale-price">@Model.DonGia đ</span>
                         }
                         else
                         {
-                            <span class="sale-price">@(Model.DonGia* ((100-Model.GiamGia)/100))<span>@Model.DonGia</span></span>
+                            <span class="sale-price">@{double? value = Model.DonGia * ((100 - Model.GiamGia) / 100);
+                                    decimal result = value.HasValue ? Convert.ToDecimal(value.Value) : 0;
+                                    } @result đ<span>@Model.DonGia đ</span></span>
                         }
                     </div>
                     <div class="quantity">

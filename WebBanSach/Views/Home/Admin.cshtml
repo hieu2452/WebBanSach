@@ -90,11 +90,12 @@
                         Edit
                     </a>
 
-                    <button type="button" class="btn btn-danger details-book"
-                        data-url="@Url.Action("Details", "Book", new { masach = item.MaSach })"
-                        data-booktitle="@item.TenSach">
-                        Details
-                    </button>
+                    <a type="button" class="btn btn-danger edit-book" asp-controller="Book" asp-action="BookDetails"
+                   asp-route-masach="@item.MaSach"
+                   data-url="@Url.Action("Edit", "Book", new { masach = item.MaSach })"
+                   data-booktitle="@item.TenSach">
+                        Chi tiết sách
+                    </a>
 
                     <a type="button" class="btn btn-danger delete-book"
                    data-url="@Url.Action("Delete", "Book", new { masach = item.MaSach })"

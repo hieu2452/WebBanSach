@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace WebBanSach.Models;
 
@@ -23,10 +24,12 @@ public partial class TUser
 
     public string? AnhDaiDien { get; set; }
 
+    public bool? isActive { get; set; }
 
     [NotMapped]
     [Display(Name = "Tải ảnh đại diện")]
-    public IFormFile AnhFile { get; set; }
+    [BindNever]
+    public IFormFile? AnhFile { get; set; }
 
     public virtual TUserRole? Role { get; set; }
 

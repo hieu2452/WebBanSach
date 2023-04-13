@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Text.Json;
@@ -32,6 +33,7 @@ namespace WebBanSach.Controllers
             return View(lstbooks);
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index(int? page)
         {
             int pageSize = 8;
@@ -62,7 +64,6 @@ namespace WebBanSach.Controllers
         }
 
         [Authorize]
-        [Authorize(Policy = "UserPolicy")]
         public IActionResult Cart()
         {
             string cartJson = HttpContext.Session.GetString("Cart");
@@ -87,7 +88,10 @@ namespace WebBanSach.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
+        public IActionResult forbidden()
+        {
+            return View();
+        }
 
     }
 }

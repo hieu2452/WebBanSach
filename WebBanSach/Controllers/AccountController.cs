@@ -73,10 +73,13 @@ namespace WebBanSach.Controllers
         {
             var user = await _context.TUsers.FirstOrDefaultAsync(u => u.Email == model.Email && u.PassW == model.Password);
 
-            if (user == null)
+            if (user == null )
             {
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 return View(model);
+            }else if(user.isActive == false)
+            {
+                return RedirectToAction("forbidden", "Home");
             }
 
             var claims = new List<Claim>

@@ -153,15 +153,16 @@ namespace WebBanSach.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> TimHoaDonTheoMaHD(string mahd)
+        [Authorize(Policy = "AdminPolicy")]
+        public async Task<IActionResult> TimHoaDonTheoMaHD(string search)
         {
-            TempData["msg"] = "";
-            int hd = int.Parse(mahd);
+            
+            int hd = int.Parse(search);
             var bills = from h in _context.THoaDons
                         join u in _context.TUsers on h.Id equals u.Id
                         join c in _context.TChiTietHoaDons on h.MaHd equals c.MaHd
                         join s in _context.TSaches on c.MaSach equals s.MaSach
-                        where h.MaHd == hd
+                        where h.MaHd == hd || u.Sdt == hd
                         group new { h, u, c, s } by new { h.MaHd, h.Id } into g
 
                         select new HoaDonModel
@@ -193,15 +194,16 @@ namespace WebBanSach.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> TimHoaDonTheoMaHDkh(string mahd)
+        [Authorize(Policy = "UserPolicy")]
+        public async Task<IActionResult> TimHoaDonTheoMaHDkh(string search)
         {
-            TempData["msg"] = "";
-            int hd = int.Parse(mahd);
+            
+            int hd = int.Parse(search);
             var bills = from h in _context.THoaDons
                         join u in _context.TUsers on h.Id equals u.Id
                         join c in _context.TChiTietHoaDons on h.MaHd equals c.MaHd
                         join s in _context.TSaches on c.MaSach equals s.MaSach
-                        where h.MaHd == hd
+                        where h.MaHd == hd || u.Sdt == hd
                         group new { h, u, c, s } by new { h.MaHd, h.Id } into g
 
                         select new HoaDonModel

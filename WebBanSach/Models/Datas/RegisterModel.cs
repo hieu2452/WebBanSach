@@ -12,6 +12,7 @@ namespace WebBanSach.Models.Datas
         [EmailAddress(ErrorMessage = "Please enter a valid email address")]
         public string Email { get; set; }
 
+        [RegularExpression("^\\d+", ErrorMessage = "Nhập số điện thoại")]
         public double SDT { get; set; }
 
 

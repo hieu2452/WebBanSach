@@ -31,9 +31,9 @@ namespace WebBanSach.Repository
 
         }
 
-        async Task<List<TSach>> IBookRepository.GetBookLikeName(string tensach)
+        async Task<List<TSach>> IBookRepository.GetBookLikeName(string search)
         {
-            return await _context.TSaches.Where(c => c.TenSach.Contains(tensach)).ToListAsync();
+            return await _context.TSaches.Where(c => c.TenSach.Contains(search) || c.TacGia.Contains(search) ).ToListAsync();
         }
 
         async Task<int> IBookRepository.AddNewBook(BookModel model)

@@ -173,11 +173,11 @@ namespace WebBanSach.Controllers
         {
             if (ModelState.IsValid)
             {
-                TempData["message"] = "";
+                TempData["message"] = "Xóa thành công";
                 var rs = await _bookRepository.DeleteBook(masach);
                 if (!rs)
                 {
-                    TempData["message"] = "Khong xoa dc san pham";
+                    TempData["message"] = "Không xóa được sách";
                     return RedirectToAction("Admin", "Home");
 
                 }
@@ -189,9 +189,9 @@ namespace WebBanSach.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> SearchBookByName(string tensach)
+        public async Task<IActionResult> SearchBookByName(string search)
         {
-            var books = await _bookRepository.GetBookLikeName(tensach);
+            var books = await _bookRepository.GetBookLikeName(search);
 
             if (books == null )
             {
@@ -199,6 +199,13 @@ namespace WebBanSach.Controllers
             }
 
             return View(books);
+        }
+
+
+        public async Task<IActionResult> BookDetails(int masach)
+        {
+            var book = await _bookRepository.GetById(masach);
+            return View(book);
         }
 
     }

@@ -19,34 +19,34 @@
 <form asp-controller="Book" asp-action="Edit" method="post" enctype="multipart/form-data">
     <input asp-for="MaSach" type="hidden" />
     <div class="form-group">
-        <label asp-for="TenSach" class="control-label"></label>
+        <label asp-for="TenSach" class="control-label">Tên sách</label>
         <input asp-for="TenSach" class="form-control" />
         <span asp-validation-for="TenSach" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="TacGia" class="control-label"></label>
+        <label asp-for="TacGia" class="control-label">Tác giả</label>
         <input asp-for="TacGia" class="form-control" />
         <span asp-validation-for="TacGia" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="MaTl" class="control-label"></label>
+        <label asp-for="MaTl" class="control-label">Thể loại</label>
         <select asp-for="MaTl" asp-items="(_categoryRepo.GetCategorys()).Select(x=> new SelectListItem() { Text = x.TenTl, Value = x.MaTl.ToString()})" class="form-control"></select>
         <span asp-validation-for="MaTl" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="MaNg" class="control-label"></label>
+        <label asp-for="MaNg" class="control-label">Ngôn ngữ</label>
         <select asp-for="MaNg" asp-items="(_languageRepo.GetLanguages()).Select(x=> new SelectListItem() { Text = x.Mota, Value = x.MaNg.ToString()})" class="form-control"></select>
         <span asp-validation-for="MaNg" class="text-danger"></span>
     </div>
     
     <div class="form-group">
-        <label asp-for="MaNxb" class="control-label"></label>
+        <label asp-for="MaNxb" class="control-label">Nhà xuất bản</label>
         <select asp-for="MaNxb" asp-items="( _nhaxbRepo.GetNXBs()).Select(x=> new SelectListItem() { Text = x.TenNxb, Value = x.MaNxb.ToString()})" class="form-control"></select>
         <span asp-validation-for="MaNxb" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="DonGia" class="control-label"></label>
+        <label asp-for="DonGia" class="control-label">Đơn giá</label>
         <input asp-for="DonGia" class="form-control" />
         <span asp-validation-for="DonGia" class="text-danger"></span>
     </div>
@@ -56,19 +56,19 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="GiamGiaInput" class="control-label"></label>
+        <label asp-for="GiamGiaInput" class="control-label">Giảm giá</label>
         <input asp-for="GiamGiaInput" class="form-control" />
         <span asp-validation-for="GiamGiaInput" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="SoLuong" class="control-label"></label>
+        <label asp-for="SoLuong" class="control-label">Số lượng</label>
         <input asp-for="SoLuong" class="form-control" />
         <span asp-validation-for="SoLuong" class="text-danger"></span>
     </div>
     
     <div class="form-group">
-        <label asp-for="Mota" class="control-label"></label>
+        <label asp-for="Mota" class="control-label">Mô tả</label>
         <input asp-for="Mota" class="form-control" />
         <span asp-validation-for="Mota" class="text-danger"></span>
     </div>

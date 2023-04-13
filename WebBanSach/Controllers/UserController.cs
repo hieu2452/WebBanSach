@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Text.Json;
 using WebBanSach.Models;
 using WebBanSach.Models.Datas;
+using WebBanSach.Repository.Interface;
 
 namespace WebBanSach.Controllers
 {
@@ -12,13 +14,16 @@ namespace WebBanSach.Controllers
     {
 
         private readonly DbBookStoreContext _context;
+        private readonly IUserRepository _user;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public UserController(DbBookStoreContext context, IWebHostEnvironment webHostEnvironment)
+        public UserController(DbBookStoreContext context, IWebHostEnvironment webHostEnvironment, IUserRepository user)
         {
             _context = context;
-            _webHostEnvironment = webHostEnvironment;   
+            _webHostEnvironment = webHostEnvironment;
+            _user = user;
         }
 
+        [Authorize(Policy = "UserPolicy")]
         public IActionResult Profile()
         {
             string userif = HttpContext.Session.GetString("UserInfo");
@@ -32,6 +37,7 @@ namespace WebBanSach.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = "UserPolicy")]
         public IActionResult SuaThongTin(int makh)
         {
             var user = _context.TUsers.SingleOrDefault(x => x.Id == makh);
@@ -43,25 +49,46 @@ namespace WebBanSach.Controllers
         {
             if (ModelState.IsValid)
             {
-                var oldUser = _context.TUsers.Find(user.Id);
-                string pic = UploadImage(user.AnhFile);
-                oldUser.AnhDaiDien = pic;
-                oldUser.UserN = user.UserN;
-                oldUser.DiaChi = user.DiaChi;
-                oldUser.Sdt = user.Sdt;
+                if (user.AnhFile != null)
+                {
+                    var oldUser = _context.TUsers.Find(user.Id);
+                    oldUser.UserN = user.UserN;
+                    oldUser.DiaChi = user.DiaChi;
+                    oldUser.Sdt = user.Sdt;
+                    string pic = UploadImage(user.AnhFile);
+                    oldUser.AnhDaiDien = pic;
+                    string userif = HttpContext.Session.GetString("UserInfo");
+
+                    TUser userkh = new TUser();
+
+                    userkh = JsonSerializer.Deserialize<TUser>(userif);
+                    userkh.UserN = user.UserN;
+                    userkh.Sdt = user.Sdt;
+                    userkh.DiaChi = user.DiaChi;
+                    userkh.AnhDaiDien = pic;
+                    string updateUser = JsonSerializer.Serialize(userkh);
+                    HttpContext.Session.SetString("UserInfo", updateUser);
+                }
+                else
+                {
+                    var oldUser = _context.TUsers.Find(user.Id);
+                    oldUser.UserN = user.UserN;
+                    oldUser.DiaChi = user.DiaChi;
+                    oldUser.Sdt = user.Sdt;
+                    string userif = HttpContext.Session.GetString("UserInfo");
+
+                    TUser userkh = new TUser();
+
+                    userkh = JsonSerializer.Deserialize<TUser>(userif);
+                    userkh.UserN = user.UserN;
+                    userkh.Sdt = user.Sdt;
+                    userkh.DiaChi = user.DiaChi;
+                    string updateUser = JsonSerializer.Serialize(userkh);
+                    HttpContext.Session.SetString("UserInfo", updateUser);
+                }
                 /*_context.Entry(user).State = EntityState.Modified;*/
                 _context.SaveChanges();
-                string userif = HttpContext.Session.GetString("UserInfo");
 
-                TUser userkh = new TUser();
-
-                userkh = JsonSerializer.Deserialize<TUser>(userif);
-                userkh.UserN = user.UserN;
-                userkh.Sdt = user.Sdt;
-                userkh.DiaChi = user.DiaChi;
-                userkh.AnhDaiDien = pic;
-                string updateUser = JsonSerializer.Serialize(userkh);
-                HttpContext.Session.SetString("UserInfo", updateUser);
                 return RedirectToAction("Profile", "User");
             }
             return View(user);
@@ -101,6 +128,34 @@ namespace WebBanSach.Controllers
         {
             string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif" };
             return allowedExtensions.Contains(fileExtension.ToLower());
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> QuanLiUser()
+        {
+            var users = await _user.GetAllUser();
+
+            return View(users);
+        }
+
+        [HttpGet]
+        public IActionResult EditUser(int userid)
+        {
+            var user = _user.GetUserById(userid);
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult EditUser(TUser user)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(user).State = EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction("Admin", "Home");
+            }
+            return View(user);
         }
 
     }

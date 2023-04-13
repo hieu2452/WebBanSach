@@ -1,0 +1,73 @@
+﻿@model List<TUser>
+
+@{
+    ViewData["Title"] = "QuanLiUser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>QuanLiUser</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tên người dùng
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Số điện thoại
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Mật khẩu
+            </th>
+            <th>
+                Quyền hạn
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sdt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.RoleId)
+            </td>
+            <td>
+                 <a type="button" class="btn btn-danger edit-book" asp-controller="User" asp-action="EditUser"
+                   asp-route-userid="@item.Id"
+                   data-url="@Url.Action("EditUser", "User", new { userid = item.Id })"
+                   data-booktitle="@item.UserN">
+                        Edit
+                 </a>
+
+                    <a type="button" class="btn btn-danger edit-book" asp-controller="User" asp-action="UserDetails"
+                   asp-route-userid="@item.Id"
+                   data-url="@Url.Action("UserDetails", "User", new { userid = item.Id })"
+                   data-booktitle="@item.UserN">
+                        Details
+                   </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

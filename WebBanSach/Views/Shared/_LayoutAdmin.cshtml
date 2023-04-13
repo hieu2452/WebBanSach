@@ -54,9 +54,8 @@
                            </li>
                         </ul>
                      </li>
-                     <li><a href="#"><i class="fa fa-clock-o orange_color"></i> <span>...</span></a></li>
                      <li>
-                        <a href="#" data-toggle="collapse" aria-expanded="false" ><i class="fa fa-diamond purple_color"></i> <span>...</span></a>
+                        <a asp-controller="User" asp-action="quanliuser" ><span>Quản lí người dùng</span></a>
                         <!-- <ul class="collapse list-unstyled" id="element">
                            <li><a href="general_elements.html">> <span>General Elements</span></a></li>
                            <li><a href="media_gallery.html">> <span>Media Gallery</span></a></li>
@@ -75,8 +74,7 @@
                      </li>
                      <li><a href="#"><i class="fa fa-briefcase blue1_color"></i> <span>...</span></a></li>
                      <li>
-                        <a href="#">
-                        <i class="fa fa-paper-plane red_color"></i> <span>...</span></a>
+                        <a asp-controller="Account" asp-action="Logout"><span>Đăng xuất</span> <i class="fa fa-sign-out"></i></a>
                      </li>
                      <!-- <li class="active">
                         <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Additional Pages</span></a>
@@ -109,9 +107,12 @@
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="full">
                             <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
-                            
+                            <div class="logo_section">
+                           <a href="index.html"><img class="img-responsive" src="../users/profilepictures/profile.jpg" alt="#" /></a>
+                             </div>
                             <div class="right_topbar">
                                 <div class="icon_info">
+
                                     <ul class="user_profile_dd">
                                         <li>
                                             <div class="dropdown-menu">

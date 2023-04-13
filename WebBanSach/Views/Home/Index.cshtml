@@ -50,13 +50,16 @@
             </div>
             <div class="price">
                 @if (item.GiamGia == null){
-                                <span class="sale-price">@item.DonGia</span>
+                                <span class="sale-price">@item.DonGia đ</span>
                                 <a asp-controller="Home" asp-action="BookDetails"
                            asp-route-masach="@item.MaSach">
                                     <i class='bx bx-shopping-bag'></i>
                                 </a>
                 }else{
-                                <span class="sale-price">@(item.DonGia* ((100-item.GiamGia)/100))<span>@item.DonGia</span></span>
+                                <span class="sale-price">
+                                    @{double? value = item.DonGia * ((100 - item.GiamGia) / 100);
+                                    decimal result = value.HasValue ? Convert.ToDecimal(value.Value) : 0;
+                                    } @result đ <span>@item.DonGia đ</span></span>
                                 <a asp-controller="Home" asp-action="BookDetails"
                            asp-route-masach="@item.MaSach">
                                     <i class='bx bx-shopping-bag'></i>
