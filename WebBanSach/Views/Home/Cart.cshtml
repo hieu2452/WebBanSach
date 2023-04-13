@@ -7,6 +7,9 @@
 
 @model List<CartItem>
 
+@{
+    double sum = 0;
+}
 
 <!-- Add this code after your table rows loop -->
 
@@ -43,6 +46,7 @@
                 </div>
                 @for (var i = 0; i < Model.Count(); i++)
                 {
+                    sum += (double)(Model[i].DonGia * Model[i].SoLuong);
                     <div class="list-product-cart">
                         <div class="product-item col-md-2">
                             @if (Model[i].Anh != null)
@@ -77,6 +81,14 @@
                         </div>
                     </div>
                 }
+                <div class="header-label">
+                    <div class="label-item col-md-2">
+                        Thành tiền:
+                    </div>
+                    <div class="label-item col-md-2">
+                        @sum
+                    </div>
+                </div>
             </div>
             <button class="footer-filter-btn cart-btn">Đặt ngay</button>
         </form>

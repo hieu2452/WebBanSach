@@ -25,8 +25,8 @@
     }
 
     .form-control{
-        width: 300px;
-        margin-bottom30px;
+        width: 250px;
+        margin-bottom: 30px;
     }
 
     #email-exists-message{
@@ -45,6 +45,11 @@
         <input type="text" name="mahd" class="form-control" placeholder="Tìm hóa đơn" pattern="\d+" title="Nhập đúng mã hóa đơn">
     </form>
 
+@*    <div class="doanh thu">
+        <h1>Tổng doanh thu:</h1>
+        <p>@tongtien</p>
+    </div>*@
+
     @if (TempData["msg"] != null)
 {
     <div id="email-exists-message" class="alert alert-danger">
@@ -57,6 +62,7 @@
 
             @foreach (var bill in Model)
             {
+                tongtien += bill.tongTien;
                 <div class="hoadon">
                     <div class="thongtinkhachhang">
                         <p class="maHD">
