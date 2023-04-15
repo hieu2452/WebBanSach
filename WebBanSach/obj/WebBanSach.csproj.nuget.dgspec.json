@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
+    "D:\\Nam3\\Ky_II\\LapTrinhWeb\\DoAnBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {}
   },
   "projects": {
-    "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
+    "D:\\Nam3\\Ky_II\\LapTrinhWeb\\DoAnBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "projectUniqueName": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\DoAnBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
         "projectName": "WebBanSach",
-        "projectPath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+        "projectPath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\DoAnBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\obj\\",
+        "outputPath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\DoAnBanSach\\WebBanSach\\WebBanSach\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

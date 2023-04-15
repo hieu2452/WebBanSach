@@ -9,57 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebBanSach
 build_property.RootNamespace = WebBanSach
-build_property.ProjectDir = D:\Nam3\Ky_II\LapTrinhWeb\WebBanSach\WebBanSach\
+build_property.ProjectDir = D:\Nam3\Ky_II\LapTrinhWeb\DoAnBanSach\WebBanSach\WebBanSach\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Nam3\Ky_II\LapTrinhWeb\WebBanSach\WebBanSach
+build_property.MSBuildProjectDirectory = D:\Nam3\Ky_II\LapTrinhWeb\DoAnBanSach\WebBanSach\WebBanSach
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Account/Login.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Account/Register.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Book/AddNewBook.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Book/AddNewBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGROZXdCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Home/Admin.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Home/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Home/Index.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Home/Privacy.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Home/User.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Home/User.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Shared/Error.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/_ViewImports.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/_ViewStart.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Nam3/Ky_II/LapTrinhWeb/WebBanSach/WebBanSach/Views/Shared/_Layout.cshtml]
+[D:/Nam3/Ky_II/LapTrinhWeb/DoAnBanSach/WebBanSach/WebBanSach/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ep83fxov2l

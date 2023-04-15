@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "33szTPR+kithDPhcGXkswnrfF8ngnVQnQW2+faMQrMKLukoZ1PAUviQjaYyo/GG9IaSb38KFJfHlnmQyZKsP2g==",
+  "dgSpecHash": "9U+PjZEBLrUZC6Ht3NqNBURPNAeqHAKm5WemDcHOb+MbrGJ/wgosXL+ePdSRV36uwQyzcFzBykbRjcW/LgCltQ==",
   "success": true,
-  "projectFilePath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
+  "projectFilePath": "D:\\Nam3\\Ky_II\\LapTrinhWeb\\DoAnBanSach\\WebBanSach\\WebBanSach\\WebBanSach.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
